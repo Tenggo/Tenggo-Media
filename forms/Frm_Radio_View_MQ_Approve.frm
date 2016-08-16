@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
-Object = "{0ECD9B60-23AA-11D0-B351-00A0C9055D8E}#6.0#0"; "MSHFLXGD.OCX"
+Object = "{0ECD9B60-23AA-11D0-B351-00A0C9055D8E}#6.0#0"; "MShflxgd.ocx"
 Begin VB.Form Frm_Radio_View_MQ_Approve 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "View Media Quotation Approve"
@@ -18,7 +18,6 @@ Begin VB.Form Frm_Radio_View_MQ_Approve
       Strikethrough   =   0   'False
    EndProperty
    LinkTopic       =   "Form1"
-   LockControls    =   -1  'True
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ScaleHeight     =   7350
@@ -46,15 +45,26 @@ Begin VB.Form Frm_Radio_View_MQ_Approve
          Left            =   90
          TabIndex        =   22
          Top             =   5895
-         Width           =   4995
+         Width           =   7215
          Begin VB.Label Lbl_Remarks 
-            BackColor       =   &H00FFFFC0&
+            Appearance      =   0  'Flat
+            BackColor       =   &H80000005&
             BorderStyle     =   1  'Fixed Single
+            BeginProperty Font 
+               Name            =   "Tahoma"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H80000008&
             Height          =   840
             Left            =   150
             TabIndex        =   23
             Top             =   270
-            Width           =   4665
+            Width           =   6945
          End
       End
       Begin VB.Frame Frame1 
@@ -90,95 +100,164 @@ Begin VB.Form Frm_Radio_View_MQ_Approve
          Begin VB.Label Lbl_App_Date 
             ForeColor       =   &H000000FF&
             Height          =   270
-            Left            =   6840
+            Left            =   6630
             TabIndex        =   21
             Top             =   1305
-            Width           =   2175
+            Width           =   2835
          End
          Begin VB.Label Lbl_Entered_By 
-            BackColor       =   &H00FFFFFF&
+            Appearance      =   0  'Flat
+            BackColor       =   &H80000005&
             BorderStyle     =   1  'Fixed Single
+            ForeColor       =   &H80000008&
             Height          =   315
-            Left            =   6810
+            Left            =   6600
             TabIndex        =   20
             Top             =   900
-            Width           =   1875
+            Width           =   2970
          End
          Begin VB.Label Lbl_Plan_date 
-            BackColor       =   &H00FFFFFF&
+            Appearance      =   0  'Flat
+            BackColor       =   &H80000005&
             BorderStyle     =   1  'Fixed Single
+            ForeColor       =   &H80000008&
             Height          =   315
-            Left            =   6810
+            Left            =   6600
             TabIndex        =   19
             Top             =   555
-            Width           =   1875
+            Width           =   2970
          End
          Begin VB.Label Lbl_Plan_No 
-            BackColor       =   &H00FFFFFF&
+            Appearance      =   0  'Flat
+            BackColor       =   &H80000005&
             BorderStyle     =   1  'Fixed Single
+            ForeColor       =   &H80000008&
             Height          =   315
-            Left            =   6810
+            Left            =   6600
             TabIndex        =   18
             Top             =   210
-            Width           =   1875
+            Width           =   2970
          End
          Begin VB.Label Label7 
-            Alignment       =   1  'Right Justify
-            Caption         =   "Approve Date :"
+            Caption         =   "Approve Date"
+            BeginProperty Font 
+               Name            =   "Tahoma"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H000000C0&
             Height          =   270
-            Left            =   5415
+            Left            =   5145
             TabIndex        =   17
             Top             =   1305
             Width           =   1335
          End
          Begin VB.Label Label6 
-            Alignment       =   1  'Right Justify
-            Caption         =   "Entered By :"
+            Caption         =   "Entered By"
+            BeginProperty Font 
+               Name            =   "Tahoma"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H000000C0&
             Height          =   225
-            Left            =   5685
+            Left            =   5145
             TabIndex        =   16
             Top             =   915
             Width           =   1065
          End
          Begin VB.Label Label5 
-            Alignment       =   1  'Right Justify
-            Caption         =   "Plan Date :"
+            Caption         =   "Plan Date"
+            BeginProperty Font 
+               Name            =   "Tahoma"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H000000C0&
             Height          =   225
-            Left            =   5820
+            Left            =   5145
             TabIndex        =   15
             Top             =   585
             Width           =   930
          End
          Begin VB.Label Label4 
-            Alignment       =   1  'Right Justify
-            Caption         =   "Plan No :"
+            Caption         =   "Plan No"
+            BeginProperty Font 
+               Name            =   "Tahoma"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H000000C0&
             Height          =   225
-            Left            =   5805
+            Left            =   5145
             TabIndex        =   14
             Top             =   255
             Width           =   930
          End
          Begin VB.Label Label1 
-            Alignment       =   1  'Right Justify
-            Caption         =   "MQ No :"
+            Caption         =   "MQ No "
+            BeginProperty Font 
+               Name            =   "Tahoma"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H000000C0&
             Height          =   210
-            Left            =   285
+            Left            =   345
             TabIndex        =   13
             Top             =   945
             Width           =   705
          End
          Begin VB.Label Label2 
-            Alignment       =   1  'Right Justify
-            Caption         =   "&Year :"
+            Caption         =   "&Year "
+            BeginProperty Font 
+               Name            =   "Tahoma"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H000000C0&
             Height          =   210
-            Left            =   285
+            Left            =   345
             TabIndex        =   11
             Top             =   600
             Width           =   705
          End
          Begin VB.Label Label3 
-            Alignment       =   1  'Right Justify
-            Caption         =   "&Brand :"
+            Caption         =   "&Brand "
+            BeginProperty Font 
+               Name            =   "Tahoma"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H000000C0&
             Height          =   225
             Left            =   345
             TabIndex        =   10
@@ -237,6 +316,15 @@ Begin VB.Form Frm_Radio_View_MQ_Approve
          Begin VB.CommandButton Cmd_Close 
             Cancel          =   -1  'True
             Caption         =   "C&lose"
+            BeginProperty Font 
+               Name            =   "Tahoma"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
             Height          =   540
             Left            =   135
             TabIndex        =   4
@@ -261,6 +349,15 @@ Begin VB.Form Frm_Radio_View_MQ_Approve
          Width           =   1200
          Begin VB.CommandButton Cmd_Print 
             Caption         =   "&Print"
+            BeginProperty Font 
+               Name            =   "Tahoma"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
             Height          =   525
             Left            =   150
             TabIndex        =   2
@@ -380,7 +477,7 @@ Dim rs_brand As New ADODB.Recordset
     Cbo_Brand.Clear
     With rs_brand
         
-        strSql = "SELECT a.* FROM brand a, client b WHERE brand_code IN (SELECT brand_code FROM Media_Security_Catalog WHERE User_name='" & UserName & "' AND (position='Implementor' or position='Planner' or position='Buyer' or position='Supervisor' or position='Administrator' or position='Admin' ) and Valid_until > getdate()) and a.client_code=b.client_code"
+        strSql = "SELECT a.* FROM brand a, client b WHERE brand_code IN (SELECT brand_code FROM Media_Security_Catalog WHERE User_name='" & strLogin_User & "' AND (position='Implementor' or position='Planner' or position='Buyer' or position='Supervisor' or position='Administrator' or position='Admin' ) and Valid_until > getdate()) and a.client_code=b.client_code"
         .Open strSql, ConnERP, adOpenForwardOnly, adLockReadOnly
         While Not .EOF And Not .BOF
             Cbo_Brand.AddItem .Fields("Brand_Code").Value & " --> " & .Fields("Brand_Name").Value
@@ -428,20 +525,21 @@ Private Sub Cmd_Close_Click()
 End Sub
 
 Private Sub Cmd_Print_Click()
-
+MsgBox "Pending"
+Exit Sub
 Dim MSC_Bonus As String
 If Cbo_Brand.Text = "" Then
-    MsgBox "Select Brand First", vbExclamation, StrCompany
+    MsgBox "Select Brand First", vbExclamation, strApplication_Name
     Exit Sub
 End If
 
 If Cbo_Year.Text = "" Then
-    MsgBox "Select Year First", vbExclamation, StrCompany
+    MsgBox "Select Year First", vbExclamation, strApplication_Name
     Exit Sub
 End If
 
 If Cbo_MQ_NO.Text = "" Then
-    MsgBox "Select MQ No First", vbExclamation, StrCompany
+    MsgBox "Select MQ No First", vbExclamation, strApplication_Name
     Exit Sub
 End If
 Me.MousePointer = vbHourglass
@@ -449,7 +547,7 @@ Me.MousePointer = vbHourglass
 With Crpt
     .Reset
     
-    .ReportFileName = Report_Dir + "\Radio\view_mq_radio.rpt"
+    '''''.ReportFileName = Report_Dir + "\Radio\view_mq_radio.rpt"
     'header
     Dim rs_Load_Name_Brand As New ADODB.Recordset
     strSql = "select brand_name from brand where brand_code='" & Left(Cbo_Brand.Text, 4) & "'"
@@ -519,7 +617,7 @@ With Crpt
     .WindowShowRefreshBtn = True
     .WindowState = crptMaximized
     .WindowTitle = "-- View MQ TV Approve --"
-    .Connect = "DSN=" & Server_Name & ";UID=" & Login_User & ";PWD=" & Login_Password & ";DSQ=" & Database_Name
+    .Connect = "DSN=" & strServerName & ";UID=" & strLogin_User & ";PWD=" & strLogin_Password & ";DSQ=" & strDatabase_Name
     .Action = 1
 End With
 Me.MousePointer = vbDefault

@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
-Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
 Object = "{0BA686C6-F7D3-101A-993E-0000C0EF6F5E}#1.0#0"; "THREED32.ocx"
 Object = "{562E3E04-2C31-4ECE-83F4-4017EEE51D40}#8.0#0"; "todg8.ocx"
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFlxGrd.ocx"
@@ -508,7 +508,7 @@ Begin VB.Form Frm_IB_Radio
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
-            Format          =   111607809
+            Format          =   93454337
             CurrentDate     =   36805
          End
          Begin VB.Label lblMediaPlanNo 
@@ -2130,9 +2130,9 @@ Public Sub ShowData(ByVal strIBID As String)
     
     strTransProcess = "SHOW"
 
-    picButton(biePrint).Enabled = True
+    picButton(bieprint).Enabled = True
     'Call SetPictureT(bieEdit, True, picButton)
-    Call SetPictureTBEnabled(biePrint, True)
+    Call SetPictureTBEnabled(bieprint, True)
     optArea.Enabled = True
     optCity.Enabled = True
 End Sub
@@ -3296,12 +3296,12 @@ Sub SetButtonToolbar(ByVal paIsNormalMode As Boolean, picOBJ) 'TOOLBAR_AI.
     Dim element
     Dim strDummy As String
     
-    With picButton(enButtonType.bieAdd)  'ADD. 4
+    With picButton(enButtonType.bieADD)  'ADD. 4
         .Enabled = paIsNormalMode
         .Visible = paIsNormalMode
     End With
 
-    With picButton(enButtonType.bieEdit) 'EDIT. 5
+    With picButton(enButtonType.bieedit) 'EDIT. 5
         .Enabled = paIsNormalMode
         .Visible = paIsNormalMode
     End With
@@ -3319,7 +3319,7 @@ Sub SetButtonToolbar(ByVal paIsNormalMode As Boolean, picOBJ) 'TOOLBAR_AI.
         .Visible = Not paIsNormalMode
         .Left = picButton(4).Left
     End With
-    With picButton(enButtonType.biePrint)   'FIND.
+    With picButton(enButtonType.bieprint)   'FIND.
         .Enabled = paIsNormalMode
         .Visible = paIsNormalMode
         '.Left = picButton(4).Left
@@ -3336,7 +3336,7 @@ Sub SetButtonToolbar(ByVal paIsNormalMode As Boolean, picOBJ) 'TOOLBAR_AI.
         '.Left = picButton(4).Left
     End With
 
-    With picButton(enButtonType.biecancel) 'CANCEL.
+    With picButton(enButtonType.bieCancel) 'CANCEL.
         .Enabled = Not paIsNormalMode
         .Visible = Not paIsNormalMode
         .Left = picButton(5).Left
@@ -3508,10 +3508,10 @@ Private Sub picButton_Click(Index As Integer)
     Dim strCode As String, strFileRpt As String
     'Lock_MainForm True
     Select Case Index
-        Case enButtonType.bieAdd  '4 'ADD.
+        Case enButtonType.bieADD  '4 'ADD.
 
             Call db_add
-        Case enButtonType.bieEdit  '5 'EDIT.
+        Case enButtonType.bieedit  '5 'EDIT.
             Call db_edit
         Case enButtonType.bieDelete  '6 'DELETE.
             Call db_delete
@@ -3521,11 +3521,11 @@ Private Sub picButton_Click(Index As Integer)
             Call db_Find
         Case enButtonType.bieSave  'SAVE.
             Call db_save
-        Case enButtonType.biecancel 'CANCEL.
+        Case enButtonType.bieCancel 'CANCEL.
             Call db_Cancel
         Case enButtonType.bieClose  'CANCEL.
             Call db_close
-        Case enButtonType.biePrint   'Print.
+        Case enButtonType.bieprint   'Print.
             Call db_print
         Case enButtonType.bieApprove
             Call fraClientApproval_DblClick
@@ -3562,3 +3562,6 @@ Private Sub CheckForClickAll(ByRef ObjListBox As ListBox, ByRef objChkBox As Che
     'bol_Temp = False
 End Sub
 
+Sub test()
+'testing
+End Sub
