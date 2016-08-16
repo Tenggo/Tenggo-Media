@@ -1,1 +1,9 @@
-Line 553: Class MSComCtl2.DTPicker of control dtpIBDate was not a loaded control class.
+Line 33: Class Threed.SSPanel of control pnlMain was not a loaded control class.
+Line 138: Class MSFlexGridLib.MSFlexGrid of control dbgCity was not a loaded control class.
+Line 160: Class MSFlexGridLib.MSFlexGrid of control msgMix was not a loaded control class.
+Line 180: Class TrueOleDBGrid80.TDBGrid of control tdgPlan was not a loaded control class.
+Line 315: Class MSForms.OptionButton of control optCity was not a loaded control class.
+Line 332: Class MSForms.OptionButton of control optArea was not a loaded control class.
+Line 493: Class MSComCtl2.DTPicker of control dtpIBDate was not a loaded control class.
+Line 881: Class MSMask.MaskEdBox of control medGrandTotal was not a loaded control class.
+Line 1337: Class Crystal.CrystalReport of control crIB was not a loaded control class.
