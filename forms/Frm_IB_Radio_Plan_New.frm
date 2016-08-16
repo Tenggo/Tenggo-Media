@@ -1,6 +1,7 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
-Object = "{0BA686C6-F7D3-101A-993E-0000C0EF6F5E}#1.0#0"; "THREED32.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{0BA686C6-F7D3-101A-993E-0000C0EF6F5E}#1.0#0"; "THREED32.ocx"
+Object = "{562E3E04-2C31-4ECE-83F4-4017EEE51D40}#8.0#0"; "todg8.ocx"
 Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFlxGrd.ocx"
 Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "msmask32.ocx"
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDatGrd.ocx"
@@ -37,7 +38,7 @@ Begin VB.Form Frm_IB_Radio_Plan_New
       Left            =   0
       ScaleHeight     =   750
       ScaleWidth      =   7680
-      TabIndex        =   51
+      TabIndex        =   50
       Top             =   0
       Width           =   7680
       Begin VB.PictureBox picButton 
@@ -51,7 +52,7 @@ Begin VB.Form Frm_IB_Radio_Plan_New
          Left            =   4680
          ScaleHeight     =   750
          ScaleWidth      =   1500
-         TabIndex        =   57
+         TabIndex        =   56
          Top             =   0
          Width           =   1500
       End
@@ -66,7 +67,7 @@ Begin VB.Form Frm_IB_Radio_Plan_New
          Left            =   1620
          ScaleHeight     =   750
          ScaleWidth      =   1500
-         TabIndex        =   56
+         TabIndex        =   55
          Top             =   0
          Width           =   1500
       End
@@ -81,7 +82,7 @@ Begin VB.Form Frm_IB_Radio_Plan_New
          Left            =   3150
          ScaleHeight     =   750
          ScaleWidth      =   1500
-         TabIndex        =   55
+         TabIndex        =   54
          Top             =   0
          Width           =   1500
       End
@@ -96,7 +97,7 @@ Begin VB.Form Frm_IB_Radio_Plan_New
          Left            =   90
          ScaleHeight     =   750
          ScaleWidth      =   1500
-         TabIndex        =   53
+         TabIndex        =   52
          Top             =   0
          Width           =   1500
       End
@@ -111,7 +112,7 @@ Begin VB.Form Frm_IB_Radio_Plan_New
          Left            =   10800
          ScaleHeight     =   750
          ScaleWidth      =   1500
-         TabIndex        =   52
+         TabIndex        =   51
          Top             =   0
          Width           =   1500
       End
@@ -126,7 +127,7 @@ Begin VB.Form Frm_IB_Radio_Plan_New
          Left            =   4680
          ScaleHeight     =   750
          ScaleWidth      =   1500
-         TabIndex        =   54
+         TabIndex        =   53
          Top             =   0
          Width           =   1500
       End
@@ -170,6 +171,122 @@ Begin VB.Form Frm_IB_Radio_Plan_New
          TabIndex        =   40
          Top             =   75
          Width           =   7275
+         Begin TrueOleDBGrid80.TDBGrid tgdMonthlyBudget 
+            Bindings        =   "Frm_IB_Radio_Plan_New.frx":0000
+            Height          =   1140
+            Left            =   195
+            TabIndex        =   58
+            Top             =   720
+            Width           =   6900
+            _ExtentX        =   12171
+            _ExtentY        =   2011
+            _LayoutType     =   4
+            _RowHeight      =   -2147483647
+            _WasPersistedAsPixels=   0
+            Columns(0)._VlistStyle=   0
+            Columns(0)._MaxComboItems=   5
+            Columns(0).DataField=   "Client_Brief_Id"
+            Columns(0)._PropDict=   "_MaxComboItems,516,2;_VlistStyle,514,3"
+            Columns.Count   =   1
+            Splits(0)._UserFlags=   0
+            Splits(0).AnchorRightColumn=   -1  'True
+            Splits(0).MarqueeStyle=   3
+            Splits(0).RecordSelectorWidth=   503
+            Splits(0)._SavedRecordSelectors=   -1  'True
+            Splits(0)._GSX_SAVERECORDSELECTORS=   0
+            Splits(0).FetchRowStyle=   -1  'True
+            Splits(0).AlternatingRowStyle=   -1  'True
+            Splits(0).DividerColor=   12632256
+            Splits(0).SpringMode=   0   'False
+            Splits(0)._PropDict=   "_ColumnProps,515,0;_UserFlags,518,3"
+            Splits(0)._ColumnProps(0)=   "Columns.Count=1"
+            Splits(0)._ColumnProps(1)=   "Column(0).Width=5186"
+            Splits(0)._ColumnProps(2)=   "Column(0).DividerColor=0"
+            Splits(0)._ColumnProps(3)=   "Column(0)._WidthInPix=5106"
+            Splits(0)._ColumnProps(4)=   "Column(0)._EditAlways=0"
+            Splits(0)._ColumnProps(5)=   "Column(0).Order=1"
+            Splits.Count    =   1
+            PrintInfos(0)._StateFlags=   3
+            PrintInfos(0).Name=   "piInternal 0"
+            PrintInfos(0).PageHeaderFont=   "Size=8.25,Charset=0,Weight=400,Underline=0,Italic=0,Strikethrough=0,Name=MS Sans Serif"
+            PrintInfos(0).PageFooterFont=   "Size=8.25,Charset=0,Weight=400,Underline=0,Italic=0,Strikethrough=0,Name=MS Sans Serif"
+            PrintInfos(0).PageHeaderHeight=   0
+            PrintInfos(0).PageFooterHeight=   0
+            PrintInfos.Count=   1
+            AllowUpdate     =   0   'False
+            DefColWidth     =   0
+            HeadLines       =   1
+            FootLines       =   1
+            MultipleLines   =   0
+            CellTipsWidth   =   0
+            MultiSelect     =   0
+            DeadAreaBackColor=   12632256
+            RowDividerColor =   12632256
+            RowSubDividerColor=   12632256
+            DirectionAfterEnter=   1
+            DirectionAfterTab=   1
+            MaxRows         =   250000
+            ViewColumnCaptionWidth=   0
+            ViewColumnWidth =   0
+            _PropDict       =   "_ExtentX,2003,3;_ExtentY,2004,3;_LayoutType,512,2;_RowHeight,16,3;_StyleDefs,513,0;_WasPersistedAsPixels,516,2"
+            _StyleDefs(0)   =   "_StyleRoot:id=0,.parent=-1,.alignment=3,.valignment=0,.bgcolor=&H80000005&"
+            _StyleDefs(1)   =   ":id=0,.fgcolor=&H80000008&,.wraptext=0,.locked=0,.transparentBmp=0"
+            _StyleDefs(2)   =   ":id=0,.fgpicPosition=0,.bgpicMode=0,.appearance=0,.borderSize=0,.ellipsis=0"
+            _StyleDefs(3)   =   ":id=0,.borderColor=&H80000005&,.borderType=0,.bold=0,.fontsize=825,.italic=0"
+            _StyleDefs(4)   =   ":id=0,.underline=0,.strikethrough=0,.charset=0"
+            _StyleDefs(5)   =   ":id=0,.fontname=MS Sans Serif"
+            _StyleDefs(6)   =   "Style:id=1,.parent=0,.namedParent=33,.fgcolor=&H0&,.borderColor=&H80000008&"
+            _StyleDefs(7)   =   "CaptionStyle:id=4,.parent=2,.namedParent=37"
+            _StyleDefs(8)   =   "HeadingStyle:id=2,.parent=1,.namedParent=34,.bgcolor=&HBC8A47&"
+            _StyleDefs(9)   =   ":id=2,.fgcolor=&HFFFFFF&"
+            _StyleDefs(10)  =   "FooterStyle:id=3,.parent=1,.namedParent=35"
+            _StyleDefs(11)  =   "InactiveStyle:id=5,.parent=2,.bgcolor=&H8000000F&,.fgcolor=&H80000012&"
+            _StyleDefs(12)  =   "SelectedStyle:id=6,.parent=1,.namedParent=36,.fgcolor=&HFFFFFF&"
+            _StyleDefs(13)  =   "EditorStyle:id=7,.parent=1,.fgcolor=&HFFFF&"
+            _StyleDefs(14)  =   "HighlightRowStyle:id=8,.parent=1,.namedParent=38,.bgcolor=&HD69A69&"
+            _StyleDefs(15)  =   "EvenRowStyle:id=9,.parent=1,.namedParent=39,.bgcolor=&HF8EDDE&"
+            _StyleDefs(16)  =   "OddRowStyle:id=10,.parent=1,.namedParent=40,.fgcolor=&H646464&"
+            _StyleDefs(17)  =   "RecordSelectorStyle:id=11,.parent=2,.namedParent=41"
+            _StyleDefs(18)  =   "FilterBarStyle:id=12,.parent=1,.namedParent=42"
+            _StyleDefs(19)  =   "Splits(0).Style:id=13,.parent=1,.fgcolor=&H80000014&"
+            _StyleDefs(20)  =   "Splits(0).CaptionStyle:id=22,.parent=4"
+            _StyleDefs(21)  =   "Splits(0).HeadingStyle:id=14,.parent=2"
+            _StyleDefs(22)  =   "Splits(0).FooterStyle:id=15,.parent=3"
+            _StyleDefs(23)  =   "Splits(0).InactiveStyle:id=16,.parent=5"
+            _StyleDefs(24)  =   "Splits(0).SelectedStyle:id=18,.parent=6,.bgcolor=&H80000011&"
+            _StyleDefs(25)  =   ":id=18,.fgcolor=&H80000007&"
+            _StyleDefs(26)  =   "Splits(0).EditorStyle:id=17,.parent=7,.fgcolor=&H575757&"
+            _StyleDefs(27)  =   "Splits(0).HighlightRowStyle:id=19,.parent=8,.bgcolor=&H8000000D&,.wraptext=-1"
+            _StyleDefs(28)  =   "Splits(0).EvenRowStyle:id=20,.parent=9,.fgcolor=&H0&"
+            _StyleDefs(29)  =   "Splits(0).OddRowStyle:id=21,.parent=10"
+            _StyleDefs(30)  =   "Splits(0).RecordSelectorStyle:id=23,.parent=11"
+            _StyleDefs(31)  =   "Splits(0).FilterBarStyle:id=24,.parent=12,.wraptext=-1"
+            _StyleDefs(32)  =   "Splits(0).Columns(0).Style:id=28,.parent=13"
+            _StyleDefs(33)  =   "Splits(0).Columns(0).HeadingStyle:id=25,.parent=14"
+            _StyleDefs(34)  =   "Splits(0).Columns(0).FooterStyle:id=26,.parent=15"
+            _StyleDefs(35)  =   "Splits(0).Columns(0).EditorStyle:id=27,.parent=17"
+            _StyleDefs(36)  =   "Named:id=33:Normal"
+            _StyleDefs(37)  =   ":id=33,.parent=0"
+            _StyleDefs(38)  =   "Named:id=34:Heading"
+            _StyleDefs(39)  =   ":id=34,.parent=33,.valignment=2,.bgcolor=&H8000000F&,.fgcolor=&H80000012&"
+            _StyleDefs(40)  =   ":id=34,.wraptext=-1"
+            _StyleDefs(41)  =   "Named:id=35:Footing"
+            _StyleDefs(42)  =   ":id=35,.parent=33,.valignment=2,.bgcolor=&H8000000F&,.fgcolor=&H80000012&"
+            _StyleDefs(43)  =   "Named:id=36:Selected"
+            _StyleDefs(44)  =   ":id=36,.parent=33,.bgcolor=&H8000000D&,.fgcolor=&H8000000E&"
+            _StyleDefs(45)  =   "Named:id=37:Caption"
+            _StyleDefs(46)  =   ":id=37,.parent=34,.alignment=2"
+            _StyleDefs(47)  =   "Named:id=38:HighlightRow"
+            _StyleDefs(48)  =   ":id=38,.parent=33,.bgcolor=&HFF0000&,.fgcolor=&H8000000E&,.borderColor=&HFF2B2B&"
+            _StyleDefs(49)  =   "Named:id=39:EvenRow"
+            _StyleDefs(50)  =   ":id=39,.parent=33,.bgcolor=&HFFFF00&"
+            _StyleDefs(51)  =   "Named:id=40:OddRow"
+            _StyleDefs(52)  =   ":id=40,.parent=33"
+            _StyleDefs(53)  =   "Named:id=41:RecordSelector"
+            _StyleDefs(54)  =   ":id=41,.parent=34"
+            _StyleDefs(55)  =   "Named:id=42:FilterBar"
+            _StyleDefs(56)  =   ":id=42,.parent=33,.fgcolor=&H80000005&"
+         End
          Begin VB.ComboBox cboMonth 
             BeginProperty Font 
                Name            =   "Tahoma"
@@ -220,78 +337,13 @@ Begin VB.Form Frm_IB_Radio_Plan_New
             Top             =   2040
             Width           =   1180
          End
-         Begin MSDataGridLib.DataGrid dgdMonthlyBudget 
-            Height          =   1095
-            Left            =   180
-            TabIndex        =   44
-            Top             =   750
-            Width           =   6885
-            _ExtentX        =   12144
-            _ExtentY        =   1931
-            _Version        =   393216
-            AllowUpdate     =   0   'False
-            HeadLines       =   1
-            RowHeight       =   15
-            BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-               Name            =   "MS Sans Serif"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-               Name            =   "Tahoma"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ColumnCount     =   2
-            BeginProperty Column00 
-               DataField       =   ""
-               Caption         =   ""
-               BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-                  Type            =   0
-                  Format          =   ""
-                  HaveTrueFalseNull=   0
-                  FirstDayOfWeek  =   0
-                  FirstWeekOfYear =   0
-                  LCID            =   1033
-                  SubFormatType   =   0
-               EndProperty
-            EndProperty
-            BeginProperty Column01 
-               DataField       =   ""
-               Caption         =   ""
-               BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-                  Type            =   0
-                  Format          =   ""
-                  HaveTrueFalseNull=   0
-                  FirstDayOfWeek  =   0
-                  FirstWeekOfYear =   0
-                  LCID            =   1033
-                  SubFormatType   =   0
-               EndProperty
-            EndProperty
-            SplitCount      =   1
-            BeginProperty Split0 
-               BeginProperty Column00 
-               EndProperty
-               BeginProperty Column01 
-               EndProperty
-            EndProperty
-         End
          Begin MSMask.MaskEdBox medBudget 
             Height          =   330
             Left            =   4890
-            TabIndex        =   45
+            TabIndex        =   44
             Top             =   270
-            Width           =   2250
-            _ExtentX        =   3969
+            Width           =   2175
+            _ExtentX        =   3836
             _ExtentY        =   582
             _Version        =   393216
             Appearance      =   0
@@ -306,6 +358,7 @@ Begin VB.Form Frm_IB_Radio_Plan_New
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
+            Format          =   "###,###,###,###"
             PromptChar      =   "_"
          End
          Begin VB.CommandButton cmdCancelBudget 
@@ -321,7 +374,7 @@ Begin VB.Form Frm_IB_Radio_Plan_New
             EndProperty
             Height          =   495
             Left            =   4635
-            TabIndex        =   47
+            TabIndex        =   46
             Top             =   2040
             Width           =   1200
          End
@@ -338,7 +391,7 @@ Begin VB.Form Frm_IB_Radio_Plan_New
             EndProperty
             Height          =   495
             Left            =   4650
-            TabIndex        =   46
+            TabIndex        =   45
             Top             =   2040
             Width           =   1180
          End
@@ -357,7 +410,7 @@ Begin VB.Form Frm_IB_Radio_Plan_New
             ForeColor       =   &H000000C0&
             Height          =   255
             Left            =   210
-            TabIndex        =   49
+            TabIndex        =   48
             Top             =   330
             Width           =   615
          End
@@ -376,7 +429,7 @@ Begin VB.Form Frm_IB_Radio_Plan_New
             ForeColor       =   &H000000C0&
             Height          =   255
             Left            =   4125
-            TabIndex        =   48
+            TabIndex        =   47
             Top             =   315
             Width           =   735
          End
@@ -782,7 +835,7 @@ Begin VB.Form Frm_IB_Radio_Plan_New
                EndProperty
                Height          =   495
                Left            =   2850
-               TabIndex        =   58
+               TabIndex        =   57
                ToolTipText     =   "Remove Sales Area Cities"
                Top             =   1305
                Width           =   870
@@ -799,9 +852,9 @@ Begin VB.Form Frm_IB_Radio_Plan_New
                   Strikethrough   =   0   'False
                EndProperty
                Height          =   255
-               ItemData        =   "Frm_IB_Radio_Plan_New.frx":0000
+               ItemData        =   "Frm_IB_Radio_Plan_New.frx":0017
                Left            =   165
-               List            =   "Frm_IB_Radio_Plan_New.frx":0007
+               List            =   "Frm_IB_Radio_Plan_New.frx":001E
                TabIndex        =   19
                Top             =   1380
                Visible         =   0   'False
@@ -1144,7 +1197,7 @@ Begin VB.Form Frm_IB_Radio_Plan_New
       Begin MSDataGridLib.DataGrid dgdPlanDetailTemp 
          Height          =   1095
          Left            =   420
-         TabIndex        =   50
+         TabIndex        =   49
          Top             =   5730
          Visible         =   0   'False
          Width           =   6795
@@ -1297,7 +1350,7 @@ Private Sub Form_Load()
     SwitchSchedule False
     
     FillScheduleList
-    
+    fraMonthlyBudget.Enabled = True
     'dw - Refer from plan detail options selected on IB
     '--------------------------------------------------
     If Frm_IB_Radio.cboPlanDetail.Text = "City" Then
@@ -1310,7 +1363,7 @@ Private Sub Form_Load()
         LoadStations
     End If
     '---------------------------------------------------
-    If dgdMonthlyBudget.ApproxCount = 0 Then
+    If tgdMonthlyBudget.ApproxCount = 0 Then
         fraMonthlyBudget.Enabled = True
         fraSchedule.Enabled = False
         fraSalesStation.Enabled = False
@@ -1322,6 +1375,8 @@ Private Sub Form_Load()
     End If
     Call EnableObject(False)
     'pnlMain.Enabled = False
+    'MsgBox fraMonthlyBudget.Enabled
+    tgdMonthlyBudget.Columns(3).Width = 15000
 End Sub
 
 Private Sub RestoreToOriginal()
@@ -2322,19 +2377,18 @@ Private Sub ViewGrdBudget()
     Dim clmGridColumn
     
     Frm_IB_Radio.recRadioPlanTemp.Filter = ""
-    Set dgdMonthlyBudget.DataSource = Frm_IB_Radio.recRadioPlanTemp
+'    Set dgdMonthlyBudget.DataSource = Frm_IB_Radio.recRadioPlanTemp
+    Set tgdMonthlyBudget.DataSource = Nothing
+    tgdMonthlyBudget.ClearFields
+    tgdMonthlyBudget.DataSource = Frm_IB_Radio.recRadioPlanTemp
+    tgdMonthlyBudget.Columns(0).Visible = False
+    tgdMonthlyBudget.Columns(1).Visible = False
+    tgdMonthlyBudget.Columns(2).Alignment = dbgRight
+    tgdMonthlyBudget.Columns(3).Visible = False
+    tgdMonthlyBudget.Columns(3).Alignment = dbgRight
+    tgdMonthlyBudget.Columns(3).NumberFormat = "#,##0"
     
-    For Each clmGridColumn In dgdMonthlyBudget.Columns
-        Select Case clmGridColumn.DataField
-            Case "Budget":
-                 clmGridColumn.NumberFormat = "#,##0"
-                 clmGridColumn.Alignment = dbgRight
-            Case "Month":
-                 clmGridColumn.Alignment = dbgRight
-            Case Else:
-                clmGridColumn.Width = 0
-        End Select
-    Next
+    
 End Sub
 
 Private Sub dgdMonthlyBudget_Click()
@@ -2611,6 +2665,13 @@ Private Sub medBudget_KeyPress(KeyAscii As Integer)
         KeyAscii = 0
         Beep
         Exit Sub
+    End If
+End Sub
+
+Private Sub tgdMonthlyBudget_Click()
+    If Not Frm_IB_Radio.recRadioPlanTemp.EOF Then
+        cboMonth.Text = Get_Month_Name(Frm_IB_Radio.recRadioPlanTemp("Month").Value)
+        medBudget.Text = Frm_IB_Radio.recRadioPlanTemp("Budget").Value
     End If
 End Sub
 

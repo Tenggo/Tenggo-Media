@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{0BA686C6-F7D3-101A-993E-0000C0EF6F5E}#1.0#0"; "THREED32.OCX"
+Object = "{0BA686C6-F7D3-101A-993E-0000C0EF6F5E}#1.0#0"; "THREED32.ocx"
 Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDatGrd.ocx"
 Begin VB.Form Frm_Print_Material_Catalog 
    BorderStyle     =   1  'Fixed Single
@@ -7,7 +7,7 @@ Begin VB.Form Frm_Print_Material_Catalog
    ClientHeight    =   4920
    ClientLeft      =   45
    ClientTop       =   330
-   ClientWidth     =   6210
+   ClientWidth     =   6225
    ControlBox      =   0   'False
    BeginProperty Font 
       Name            =   "Tahoma"
@@ -22,7 +22,7 @@ Begin VB.Form Frm_Print_Material_Catalog
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ScaleHeight     =   4920
-   ScaleWidth      =   6210
+   ScaleWidth      =   6225
    StartUpPosition =   2  'CenterScreen
    Begin Threed.SSPanel pnl_Main 
       Align           =   1  'Align Top
@@ -30,9 +30,9 @@ Begin VB.Form Frm_Print_Material_Catalog
       Left            =   0
       TabIndex        =   7
       Top             =   750
-      Width           =   6210
+      Width           =   6225
       _Version        =   65536
-      _ExtentX        =   10954
+      _ExtentX        =   10980
       _ExtentY        =   7355
       _StockProps     =   15
       BackColor       =   15790320
@@ -333,11 +333,11 @@ Begin VB.Form Frm_Print_Material_Catalog
       Height          =   750
       Left            =   0
       ScaleHeight     =   750
-      ScaleWidth      =   6210
+      ScaleWidth      =   6225
       TabIndex        =   0
       TabStop         =   0   'False
       Top             =   0
-      Width           =   6210
+      Width           =   6225
       Begin VB.PictureBox picButton 
          Appearance      =   0  'Flat
          BackColor       =   &H00F0F0F0&

@@ -1,10 +1,11 @@
 VERSION 5.00
 Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
-Object = "{0ECD9B60-23AA-11D0-B351-00A0C9055D8E}#6.0#0"; "MSHFLXGD.OCX"
+Object = "{0BA686C6-F7D3-101A-993E-0000C0EF6F5E}#1.0#0"; "THREED32.ocx"
+Object = "{0ECD9B60-23AA-11D0-B351-00A0C9055D8E}#6.0#0"; "MShflxgd.ocx"
 Begin VB.Form Frm_Radio_Media_Quot_History 
    BorderStyle     =   1  'Fixed Single
    Caption         =   "Radio Media Quotation Revision"
-   ClientHeight    =   8025
+   ClientHeight    =   8640
    ClientLeft      =   45
    ClientTop       =   330
    ClientWidth     =   9645
@@ -19,198 +20,89 @@ Begin VB.Form Frm_Radio_Media_Quot_History
    EndProperty
    Icon            =   "Frm_Radio_Media_Quot_History.frx":0000
    LinkTopic       =   "Form1"
-   LockControls    =   -1  'True
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   8025
+   ScaleHeight     =   8640
    ScaleWidth      =   9645
    StartUpPosition =   1  'CenterOwner
-   Begin Crystal.CrystalReport Crpt 
-      Left            =   3420
-      Top             =   2655
-      _ExtentX        =   741
-      _ExtentY        =   741
-      _Version        =   348160
-      PrintFileLinesPerPage=   60
-   End
-   Begin VB.PictureBox Picture1 
-      Height          =   8010
+   Begin VB.PictureBox picToolbar 
+      Align           =   1  'Align Top
+      Appearance      =   0  'Flat
+      BorderStyle     =   0  'None
+      ClipControls    =   0   'False
+      ForeColor       =   &H80000008&
+      Height          =   750
       Left            =   0
-      ScaleHeight     =   7950
-      ScaleWidth      =   9570
-      TabIndex        =   0
-      Top             =   -15
-      Width           =   9630
-      Begin VB.Frame Fra_Approval 
-         Caption         =   "Client Approval"
-         ForeColor       =   &H000000FF&
-         Height          =   1230
-         Left            =   6330
-         TabIndex        =   20
-         ToolTipText     =   "Double Click to Approve"
-         Top             =   5790
-         Width           =   3150
-         Begin VB.Label Lbl_Approval_Date 
-            Alignment       =   2  'Center
-            ForeColor       =   &H000000FF&
-            Height          =   300
-            Left            =   210
-            TabIndex        =   22
-            Top             =   765
-            Width           =   2700
-         End
-         Begin VB.Label Lbl_Approval_Status 
-            Alignment       =   2  'Center
-            BeginProperty Font 
-               Name            =   "Tahoma"
-               Size            =   11.25
-               Charset         =   0
-               Weight          =   700
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H000000FF&
-            Height          =   270
-            Left            =   285
-            TabIndex        =   21
-            Top             =   390
-            Width           =   2700
-         End
-      End
-      Begin VB.Frame Frame3 
-         Caption         =   "Remark"
-         Height          =   1230
-         Left            =   105
-         TabIndex        =   18
-         Top             =   5790
-         Width           =   4995
-         Begin VB.Label Lbl_Remarks 
-            BackColor       =   &H00FFFFC0&
-            BorderStyle     =   1  'Fixed Single
-            Height          =   840
-            Left            =   165
-            TabIndex        =   19
-            Top             =   255
-            Width           =   4665
-         End
-      End
-      Begin VB.Frame Frame1 
-         Height          =   1530
-         Left            =   105
-         TabIndex        =   7
+      ScaleHeight     =   750
+      ScaleWidth      =   9645
+      TabIndex        =   24
+      Top             =   0
+      Width           =   9645
+      Begin VB.PictureBox picButton 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00F0F0F0&
+         BorderStyle     =   0  'None
+         ClipControls    =   0   'False
+         ForeColor       =   &H80000008&
+         Height          =   750
+         Index           =   23
+         Left            =   1665
+         ScaleHeight     =   750
+         ScaleWidth      =   1500
+         TabIndex        =   26
          Top             =   0
-         Width           =   9390
-         Begin VB.ComboBox Cbo_MQ_NO 
-            Height          =   315
-            Left            =   1590
-            Style           =   2  'Dropdown List
-            TabIndex        =   12
-            Top             =   990
-            Width           =   1770
-         End
-         Begin VB.ComboBox Cbo_Year 
-            Height          =   315
-            Left            =   1605
-            Style           =   2  'Dropdown List
-            TabIndex        =   9
-            Top             =   645
-            Width           =   1530
-         End
-         Begin VB.ComboBox Cbo_Brand 
-            Height          =   315
-            Left            =   1605
-            Style           =   2  'Dropdown List
-            TabIndex        =   8
-            Top             =   300
-            Width           =   3315
-         End
-         Begin VB.Label Label4 
-            Alignment       =   1  'Right Justify
-            Caption         =   "Plan No :"
-            Height          =   225
-            Left            =   5655
-            TabIndex        =   17
-            Top             =   360
-            Width           =   930
-         End
-         Begin VB.Label Label5 
-            Alignment       =   1  'Right Justify
-            Caption         =   "Plan Date :"
-            Height          =   225
-            Left            =   5670
-            TabIndex        =   16
-            Top             =   690
-            Width           =   930
-         End
-         Begin VB.Label Lbl_Plan_No 
-            BackColor       =   &H00FFFFFF&
-            BorderStyle     =   1  'Fixed Single
-            Height          =   315
-            Left            =   6660
-            TabIndex        =   15
-            Top             =   315
-            Width           =   1875
-         End
-         Begin VB.Label Lbl_Plan_date 
-            BackColor       =   &H00FFFFFF&
-            BorderStyle     =   1  'Fixed Single
-            Height          =   315
-            Left            =   6660
-            TabIndex        =   14
-            Top             =   660
-            Width           =   1875
-         End
-         Begin VB.Label Label1 
-            Alignment       =   1  'Right Justify
-            Caption         =   "MQ No :"
-            Height          =   210
-            Left            =   840
-            TabIndex        =   13
-            Top             =   1035
-            Width           =   705
-         End
-         Begin VB.Label Label2 
-            Alignment       =   1  'Right Justify
-            Caption         =   "&Year :"
-            Height          =   210
-            Left            =   840
-            TabIndex        =   11
-            Top             =   675
-            Width           =   705
-         End
-         Begin VB.Label Label3 
-            Alignment       =   1  'Right Justify
-            Caption         =   "&Brand :"
-            Height          =   225
-            Left            =   900
-            TabIndex        =   10
-            Top             =   345
-            Width           =   645
-         End
+         Width           =   1500
       End
-      Begin VB.Frame Frame2 
-         Height          =   4185
-         Left            =   90
-         TabIndex        =   5
-         Top             =   1530
-         Width           =   9390
-         Begin MSHierarchicalFlexGridLib.MSHFlexGrid Flex_Quot 
-            Height          =   3705
-            Left            =   300
-            TabIndex        =   6
-            Top             =   285
-            Width           =   8865
-            _ExtentX        =   15637
-            _ExtentY        =   6535
-            _Version        =   393216
-            BackColor       =   16777215
-            Rows            =   12
-            Cols            =   6
-            FixedRows       =   0
-            Appearance      =   0
-            BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-               Name            =   "Tahoma"
+      Begin VB.PictureBox picButton 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00F0F0F0&
+         BorderStyle     =   0  'None
+         ClipControls    =   0   'False
+         ForeColor       =   &H80000008&
+         Height          =   750
+         Index           =   8
+         Left            =   120
+         ScaleHeight     =   750
+         ScaleWidth      =   1500
+         TabIndex        =   25
+         Top             =   0
+         Width           =   1500
+      End
+   End
+   Begin Threed.SSPanel pnl_Main 
+      Align           =   1  'Align Top
+      Height          =   7845
+      Left            =   0
+      TabIndex        =   0
+      Top             =   750
+      Width           =   9645
+      _Version        =   65536
+      _ExtentX        =   17013
+      _ExtentY        =   13838
+      _StockProps     =   15
+      BackColor       =   15790320
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Tahoma"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      BevelOuter      =   1
+      Begin VB.PictureBox picMain 
+         BorderStyle     =   0  'None
+         Height          =   8010
+         Left            =   30
+         ScaleHeight     =   8010
+         ScaleWidth      =   9645
+         TabIndex        =   1
+         Top             =   60
+         Width           =   9645
+         Begin VB.Frame Frame8 
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
                Size            =   8.25
                Charset         =   0
                Weight          =   400
@@ -218,61 +110,237 @@ Begin VB.Form Frm_Radio_Media_Quot_History
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
-            _NumberOfBands  =   1
-            _Band(0).Cols   =   6
+            Height          =   825
+            Left            =   6345
+            TabIndex        =   22
+            Top             =   7020
+            Width           =   1200
+            Begin VB.CommandButton Cmd_Print 
+               Caption         =   "&Print"
+               Height          =   525
+               Left            =   150
+               Picture         =   "Frm_Radio_Media_Quot_History.frx":0442
+               TabIndex        =   23
+               Top             =   210
+               Width           =   915
+            End
          End
-      End
-      Begin VB.Frame Frame9 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   825
-         Left            =   8235
-         TabIndex        =   3
-         Top             =   7020
-         Width           =   1245
-         Begin VB.CommandButton Cmd_Close 
-            Cancel          =   -1  'True
-            Caption         =   "C&lose"
-            Height          =   540
-            Left            =   135
-            Picture         =   "Frm_Radio_Media_Quot_History.frx":0442
-            TabIndex        =   4
-            Top             =   195
-            Width           =   999
+         Begin VB.Frame Frame9 
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   825
+            Left            =   8235
+            TabIndex        =   20
+            Top             =   7020
+            Width           =   1245
+            Begin VB.CommandButton Cmd_Close 
+               Cancel          =   -1  'True
+               Caption         =   "C&lose"
+               Height          =   540
+               Left            =   135
+               Picture         =   "Frm_Radio_Media_Quot_History.frx":074C
+               TabIndex        =   21
+               Top             =   195
+               Width           =   999
+            End
          End
-      End
-      Begin VB.Frame Frame8 
-         BeginProperty Font 
-            Name            =   "MS Sans Serif"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   825
-         Left            =   6345
-         TabIndex        =   1
-         Top             =   7020
-         Width           =   1200
-         Begin VB.CommandButton Cmd_Print 
-            Caption         =   "&Print"
-            Height          =   525
-            Left            =   150
-            Picture         =   "Frm_Radio_Media_Quot_History.frx":074C
+         Begin VB.Frame Frame2 
+            Height          =   4230
+            Left            =   90
+            TabIndex        =   18
+            Top             =   1530
+            Width           =   9390
+            Begin MSHierarchicalFlexGridLib.MSHFlexGrid Flex_Quot 
+               Height          =   3705
+               Left            =   300
+               TabIndex        =   19
+               Top             =   285
+               Width           =   8865
+               _ExtentX        =   15637
+               _ExtentY        =   6535
+               _Version        =   393216
+               BackColor       =   16777215
+               Rows            =   12
+               Cols            =   6
+               FixedRows       =   0
+               Appearance      =   0
+               BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+                  Name            =   "Tahoma"
+                  Size            =   8.25
+                  Charset         =   0
+                  Weight          =   400
+                  Underline       =   0   'False
+                  Italic          =   0   'False
+                  Strikethrough   =   0   'False
+               EndProperty
+               _NumberOfBands  =   1
+               _Band(0).Cols   =   6
+            End
+         End
+         Begin VB.Frame Frame1 
+            Height          =   1530
+            Left            =   105
+            TabIndex        =   7
+            Top             =   0
+            Width           =   9390
+            Begin VB.ComboBox Cbo_Brand 
+               Height          =   315
+               Left            =   1605
+               Style           =   2  'Dropdown List
+               TabIndex        =   10
+               Top             =   300
+               Width           =   3315
+            End
+            Begin VB.ComboBox Cbo_Year 
+               Height          =   315
+               Left            =   1605
+               Style           =   2  'Dropdown List
+               TabIndex        =   9
+               Top             =   645
+               Width           =   1530
+            End
+            Begin VB.ComboBox Cbo_MQ_NO 
+               Height          =   315
+               Left            =   1590
+               Style           =   2  'Dropdown List
+               TabIndex        =   8
+               Top             =   990
+               Width           =   1770
+            End
+            Begin VB.Label Label3 
+               Alignment       =   1  'Right Justify
+               Caption         =   "&Brand :"
+               Height          =   225
+               Left            =   900
+               TabIndex        =   17
+               Top             =   345
+               Width           =   645
+            End
+            Begin VB.Label Label2 
+               Alignment       =   1  'Right Justify
+               Caption         =   "&Year :"
+               Height          =   210
+               Left            =   840
+               TabIndex        =   16
+               Top             =   675
+               Width           =   705
+            End
+            Begin VB.Label Label1 
+               Alignment       =   1  'Right Justify
+               Caption         =   "MQ No :"
+               Height          =   210
+               Left            =   840
+               TabIndex        =   15
+               Top             =   1035
+               Width           =   705
+            End
+            Begin VB.Label Lbl_Plan_date 
+               BackColor       =   &H00FFFFFF&
+               BorderStyle     =   1  'Fixed Single
+               Height          =   315
+               Left            =   6660
+               TabIndex        =   14
+               Top             =   660
+               Width           =   1875
+            End
+            Begin VB.Label Lbl_Plan_No 
+               BackColor       =   &H00FFFFFF&
+               BorderStyle     =   1  'Fixed Single
+               Height          =   315
+               Left            =   6660
+               TabIndex        =   13
+               Top             =   315
+               Width           =   1875
+            End
+            Begin VB.Label Label5 
+               Alignment       =   1  'Right Justify
+               Caption         =   "Plan Date :"
+               Height          =   225
+               Left            =   5670
+               TabIndex        =   12
+               Top             =   690
+               Width           =   930
+            End
+            Begin VB.Label Label4 
+               Alignment       =   1  'Right Justify
+               Caption         =   "Plan No :"
+               Height          =   225
+               Left            =   5655
+               TabIndex        =   11
+               Top             =   360
+               Width           =   930
+            End
+         End
+         Begin VB.Frame Frame3 
+            Caption         =   "Remark"
+            Height          =   1230
+            Left            =   105
+            TabIndex        =   5
+            Top             =   5790
+            Width           =   4995
+            Begin VB.Label Lbl_Remarks 
+               BackColor       =   &H00FFFFC0&
+               BorderStyle     =   1  'Fixed Single
+               Height          =   840
+               Left            =   165
+               TabIndex        =   6
+               Top             =   255
+               Width           =   4665
+            End
+         End
+         Begin VB.Frame Fra_Approval 
+            Caption         =   "Client Approval"
+            ForeColor       =   &H000000FF&
+            Height          =   1230
+            Left            =   6330
             TabIndex        =   2
-            Top             =   210
-            Width           =   915
+            ToolTipText     =   "Double Click to Approve"
+            Top             =   5790
+            Width           =   3150
+            Begin VB.Label Lbl_Approval_Status 
+               Alignment       =   2  'Center
+               BeginProperty Font 
+                  Name            =   "Tahoma"
+                  Size            =   11.25
+                  Charset         =   0
+                  Weight          =   700
+                  Underline       =   0   'False
+                  Italic          =   0   'False
+                  Strikethrough   =   0   'False
+               EndProperty
+               ForeColor       =   &H000000FF&
+               Height          =   270
+               Left            =   285
+               TabIndex        =   4
+               Top             =   390
+               Width           =   2700
+            End
+            Begin VB.Label Lbl_Approval_Date 
+               Alignment       =   2  'Center
+               ForeColor       =   &H000000FF&
+               Height          =   300
+               Left            =   210
+               TabIndex        =   3
+               Top             =   765
+               Width           =   2700
+            End
          End
       End
+   End
+   Begin Crystal.CrystalReport Crpt 
+      Left            =   3420
+      Top             =   2655
+      _ExtentX        =   741
+      _ExtentY        =   741
+      _Version        =   348160
+      PrintFileLinesPerPage=   60
    End
 End
 Attribute VB_Name = "Frm_Radio_Media_Quot_History"
@@ -520,7 +588,7 @@ With Crpt
     .WindowShowRefreshBtn = True
     .WindowState = crptMaximized
     .WindowTitle = "-- View MQ Radio Revision --"
-    .Connect = "DSN=" & Server_Name & ";UID=" & Login_User & ";PWD=" & Login_Password & ";DSQ=" & Database_Name & ""
+    .Connect = "DSN=" & strServerName & ";UID=" & strDBLogin_User & ";PWD=" & strDBLogin_Password & ";DSQ=" & strDatabase_Name & ""
     .Action = 1
 End With
 Me.MousePointer = vbDefault
@@ -530,6 +598,7 @@ Private Sub Form_Load()
 'center Form
     
     RemoveMenus Me, True
+    EnableObject False
 'Brand
     
 'Load Month
@@ -629,7 +698,7 @@ Set Rs_View_MQ_Approve = Nothing
 'strSql = strSql & "order by month"
 '
 'Rs_View_MQ_Approve.CursorLocation = adUseClient
-'Rs_View_MQ_Approve.Open strSql, ConnERP , adOpenStatic, adLockReadOnly
+'Rs_View_MQ_Approve.Open strSql, ConnERp , adOpenStatic, adLockReadOnly
 '
 'Index_Col = 1
 '
@@ -666,7 +735,7 @@ Set Rs_View_MQ_Approve = Nothing
 'strSql = strSql & " ORDER BY month"
 '
 'Rs_View_MQ_Approve.CursorLocation = adUseClient
-'Rs_View_MQ_Approve.Open strSql, ConnERP , adOpenStatic, adLockReadOnly
+'Rs_View_MQ_Approve.Open strSql, ConnERp , adOpenStatic, adLockReadOnly
 '
 '
 '
@@ -689,7 +758,7 @@ Set Rs_View_MQ_Approve = Nothing
 'Wend
 'Rs_View_MQ_Approve.Close
 'Set Rs_View_MQ_Approve = Nothing
-
+   ' EnableObject False
 
 End Sub
 
@@ -725,3 +794,198 @@ Private Sub Lbl_Approval_Status_dblClick()
         frm_Approve_Media_Quotation_Revision.show 1
     End If
 End Sub
+
+
+Sub SetButtonToolbar(ByVal paIsNormalMode As Boolean, picOBJ) 'TOOLBAR_AI.
+'************************************************
+' Procedure         : SetButtonToolbar
+' Function          : TOOLBAR_AI.
+' Created By        : {73 64 6B}
+' Date              : 12-Apr-2015
+'LastUpdate/By      : - Rudi
+'************************************************
+
+    Dim element
+    Dim strDummy As String
+    With picButton(enButtonType.bieprint)  'EDIT. 5
+        .Enabled = paIsNormalMode
+        .Visible = paIsNormalMode
+    End With
+
+    With picButton(enButtonType.bieClose)      'Quit.
+        .Enabled = paIsNormalMode
+        .Visible = paIsNormalMode
+    End With
+    For Each element In picOBJ
+        SetPictureTB element.Index, paIsNormalMode, picOBJ
+    Next element
+
+End Sub
+
+Sub SetPictureTB(ByVal Index As Integer, ByVal paIsNormalMode As Boolean, picOBJ)
+ '*****************************************
+'Procedure Name     : SetPictureTB
+'Procedure Function :   Creates the SQL statement in ado_Data.recordset.filter
+'                       and only filters text currently. It must be modified to filter other data types.
+'Input Parameter    : Index,paIsNormalMode,picOBJ
+'Output Parameter   :
+'Date               : -
+'LastUpdate/By      : - Tedi
+'*****************************************
+   With picOBJ(Index) 'FIRST.
+        
+        If .Enabled = True Then
+            .Picture = LoadPicture(SetButtonImageEffect(Index, bieNormal))
+        Else: .Picture = LoadPicture(SetButtonImageEffect(Index, bieDisabled))
+        End If
+    End With
+End Sub
+
+
+Sub picButton_Obj(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single, picOBJ) 'TOOLBAR_AI.
+'************************************************
+' Procedure         : picButton_MouseMove
+' Function          : TOOLBAR_AI saat mouse berada di area button.
+' Created By        : {73 64 6B}
+' Date              : 12-Apr-2015
+' addition          : Penambahan picOBJ
+'************************************************
+    If (X < 0) Or (Y < 0) Or (X > picOBJ(Index).Width) Or (Y > picOBJ(Index).Height) Then 'Dua IF ini jangan diubah keluar CASE agar API-nya jalan.
+        ReleaseCapture 'The MOUSE_LEAVE pseudo-event.
+        picOBJ(Index).Picture = LoadPicture(SetButtonImageEffect(Index, bieNormal)) 'Back to NORMAL.
+
+    ElseIf GetCapture() <> picOBJ(Index).hwnd Then
+        SetCapture picOBJ(Index).hwnd 'The MOUSE_ENTER pseudo-event.
+        picOBJ(Index).Picture = LoadPicture(SetButtonImageEffect(Index, bieOver)) 'Set to OVER_EFFECT.
+    End If
+End Sub
+
+Private Sub EnableObject(ByVal paIsEnable As Boolean)
+'*****************************************
+'Procedure Name     : EnableObject
+'Procedure Function : ~ Enable/disable control di frame Entry.
+'                     ~ Call SetButtonToolbar utk Toolbar/Statusbar AI (artificial intelligence).
+'Input Parameter    : paIsEnable: True=Enable, False=Disable.
+'Output Parameter   : -
+'Date               : 12-Apr-2015
+'LastUpdate/By      : 12-Apr-2015/{73 64 6B}
+'*****************************************
+    
+    Call SetButtonToolbar(Not paIsEnable, picButton) 'TOOLBAR_AI.
+
+End Sub
+
+Private Sub picButton_MouseDown(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single) 'TOOLBAR_AI.
+'************************************************
+' Procedure         : picButton_MouseDown
+' Function          : TOOLBAR_AI saat mouse ditekan.
+' Created By        : {73 64 6B}
+' Date              : 12-Apr-2015
+'************************************************
+    
+    picButton(Index).Picture = LoadPicture(SetButtonImageEffect(Index, bieDown)) 'FIRST.
+
+End Sub
+
+Private Sub picButton_MouseMove(Index As Integer, Button As Integer, Shift As Integer, X As Single, Y As Single) 'TOOLBAR_AI.
+'************************************************
+' Procedure         : picButton_MouseMove
+' Function          : TOOLBAR_AI saat mouse berada di area button.
+' Created By        : {73 64 6B}
+' Date              : 12-Apr-2015
+'************************************************
+    
+    picButton_Obj Index, Button, Shift, X, Y, picButton
+
+End Sub
+
+Sub AdjustSizeForm()
+'************************************************
+' Procedure         : Txt_Year_LostFocus
+' Function          : Generate IB ID
+' Date              : 01/09/2001
+' Parameter Input   :
+' Parameter Output  :
+' Last Update/By    :
+'************************************************
+    
+    Me.Top = 0
+    Me.Left = 0
+    Me.Width = mdi_Main.ScaleWidth
+    Me.Height = mdi_Main.ScaleHeight
+    pnl_Main.Height = Me.ScaleHeight - picToolbar.Height - picStatusBar.Height
+    fra_Deliverable.Height = pnl_Main.Height - (fra_Deliverable.Top + 100)
+    SSTab3.Height = fra_Deliverable.Height - (SSTab3.Top) - 150
+    txtOther_Recomedation.Height = SSTab3.Height - (txtOther_Recomedation.Top) - 150
+    txtAggreed_Channel_shortlist.Height = txtOther_Recomedation.Height
+    fra_DeliverableChannel.Height = pnl_Main.Height - (fra_DeliverableChannel.Top + 100)
+    fraFilter.Width = pnl_Main.Width - (fraFilter.Left * 2)
+    lineFilter.X1 = fraFilter.Width / 2
+    lineFilter.X2 = lineFilter.X1
+    Fra_Approve.Left = lineFilter.X2 + Label7.Left
+    txtYear.Width = lineFilter.X2 - txtYear.Left - 50
+    txtClient_Brief_Id.Width = txtYear.Width
+    txtExtention.Width = txtYear.Width
+    txtStatus.Width = txtYear.Width
+    'left part
+    lbl_dateofPreviousIssue.Left = lineFilter.X1 + Label7.Left
+    dtpDate_Previouse.Left = lbl_dateofPreviousIssue.Left + lbl_dateofPreviousIssue.Width + 50
+    dtpDate_Issue.Left = dtpDate_Previouse.Left
+    lbl_DateIssue.Left = lbl_dateofPreviousIssue.Left
+    lblCountry.Left = lbl_dateofPreviousIssue.Left
+    cboCountry.Left = dtpDate_Previouse.Left
+    Fra_Approve.Left = dtpDate_Previouse.Left
+    fra_DeliverableChannel.Width = pnl_Main.Width - fra_DeliverableChannel.Left - fraFilter.Left
+    lstRec_Channel_Selection.Width = fra_DeliverableChannel.Width - (lstRec_Channel_Selection.Left * 2)
+    lstRec_Channel_Selection.Height = fra_DeliverableChannel.Height - (lstRec_Channel_Selection.Top) - 200
+    chk_All.Top = lstRec_Channel_Selection.Height + lstRec_Channel_Selection.Top + 50
+    lbl_CheckAll.Top = chk_All.Top
+End Sub
+
+Private Sub picButton_Click(Index As Integer)
+
+'************************************************
+' Procedure         : picButton_Click
+' Function          : Action utk Navigation dan CRUD.
+' Created By        : {73 64 6B}
+' Date              : 12-Apr-2015/{73 64 6B} --> Semua coding dan query sudah di optimalkan agar faster, readable, safer, standardable.
+'************************************************
+    Dim strCode As String, strFileRpt As String
+    'Lock_MainForm True
+    Select Case Index
+        Case enButtonType.bieprint '4 'EDIT.
+            'dbPrint
+        Case enButtonType.bieClose   '23 'EXIT.
+            'Call dbClose
+    End Select
+
+End Sub
+
+Private Sub CheckForClickAll(ByRef ObjListBox As ListBox, ByRef objChkBox As CheckBox, ByVal bol_Temp As Boolean)
+'*****************************************
+'Submodul Name      : CheckForClickAll
+'Procedure Function : Untuk memeriksa kompisisi apakah row di listview tercontreng semua
+'                     - Jika node tercontreng semua maka nilai chkAll/objChkBox.Value = 1, jika tidak maka chkAll/objChkBox.Value  = 0
+'                       Pemrosesan chkAll.Value diperintahkan dengan code, sehingga perlu diberikan nilai bolean blnNotByClickByList = True
+'                     - jika check list row ada yang tidak tercontreng maka nilai bol_Temp=false sebaliknya true
+'Used Object        : objListBox,objChkBox,bol_Temp
+'Programmer Name    : Tedi
+'Date               : 19-11-2015
+'Last Update/By     : Tedi
+'Date Update        :
+'Log Update/By      :
+'***************************************************************'*****************************************
+    
+    If blnNotByClickByList = True Then Exit Sub
+    Dim intCheck As Integer
+    For intCheck = 0 To ObjListBox.ListCount - 1
+        If ObjListBox.Selected(intCheck) = False Then
+            'bol_Temp = False
+            objChkBox.Value = 0
+            Exit Sub
+        End If
+    Next intCheck
+    objChkBox.Value = 1
+    'bol_Temp = False
+End Sub
+

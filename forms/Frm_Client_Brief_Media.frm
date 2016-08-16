@@ -1,7 +1,7 @@
 VERSION 5.00
-Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{0BA686C6-F7D3-101A-993E-0000C0EF6F5E}#1.0#0"; "threed32.ocx"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TabCtl32.Ocx"
+Object = "{0BA686C6-F7D3-101A-993E-0000C0EF6F5E}#1.0#0"; "THREED32.OCX"
 Begin VB.Form Frm_Client_Brief_Media 
    Caption         =   "Client Brief"
    ClientHeight    =   9510
@@ -413,12 +413,12 @@ Begin VB.Form Frm_Client_Brief_Media
             TabCaption(0)   =   "Target Audience"
             TabPicture(0)   =   "Frm_Client_Brief_Media.frx":047A
             Tab(0).ControlEnabled=   0   'False
-            Tab(0).Control(0)=   "Label15"
-            Tab(0).Control(1)=   "Label14"
-            Tab(0).Control(2)=   "Label13"
-            Tab(0).Control(3)=   "Txt_Attitudinal"
-            Tab(0).Control(4)=   "Txt_Volumetric"
-            Tab(0).Control(5)=   "Txt_Socio_Demographic"
+            Tab(0).Control(0)=   "Txt_Socio_Demographic"
+            Tab(0).Control(1)=   "Txt_Volumetric"
+            Tab(0).Control(2)=   "Txt_Attitudinal"
+            Tab(0).Control(3)=   "Label13"
+            Tab(0).Control(4)=   "Label14"
+            Tab(0).Control(5)=   "Label15"
             Tab(0).ControlCount=   6
             TabCaption(1)   =   "Marketing Objective(s)"
             TabPicture(1)   =   "Frm_Client_Brief_Media.frx":0496
@@ -706,7 +706,7 @@ Begin VB.Form Frm_Client_Brief_Media
             _ExtentX        =   2884
             _ExtentY        =   582
             _Version        =   393216
-            Format          =   185991169
+            Format          =   126877697
             CurrentDate     =   36866
          End
          Begin MSComCtl2.DTPicker dtpDate_Previouse 
@@ -718,7 +718,7 @@ Begin VB.Form Frm_Client_Brief_Media
             _ExtentX        =   2884
             _ExtentY        =   582
             _Version        =   393216
-            Format          =   185991169
+            Format          =   126877697
             CurrentDate     =   36866
          End
          Begin VB.Line lineFilter 
@@ -1064,7 +1064,7 @@ Private Sub db_edit()
     
 End Sub
 
-Private Sub db_save()
+Private Sub db_Save()
 '************************************************
 ' Procedure         : db_Save
 ' Name Before       : Cmd_Save_Click
@@ -1715,7 +1715,7 @@ Sub SetButtonToolbar(ByVal paIsNormalMode As Boolean, picOBJ) 'TOOLBAR_AI.
         '.Left = picButton(4).Left
     End With
 
-    With picButton(enButtonType.biecancel) 'CANCEL.
+    With picButton(enButtonType.bieCancel) 'CANCEL.
         .Enabled = Not paIsNormalMode
         .Visible = Not paIsNormalMode
         .Left = picButton(5).Left
@@ -1894,8 +1894,8 @@ Private Sub picButton_Click(Index As Integer)
         Case enButtonType.bieExit  '9 'EXIT.
             Unload Me
         Case enButtonType.bieSave  'SAVE.
-            Call db_save
-        Case enButtonType.biecancel 'CANCEL.
+            Call db_Save
+        Case enButtonType.bieCancel 'CANCEL.
             Call db_Cancel
     End Select
 

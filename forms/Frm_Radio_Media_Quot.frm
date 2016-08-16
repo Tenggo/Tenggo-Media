@@ -1,8 +1,8 @@
 VERSION 5.00
 Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{0BA686C6-F7D3-101A-993E-0000C0EF6F5E}#1.0#0"; "threed32.ocx"
-Object = "{0ECD9B60-23AA-11D0-B351-00A0C9055D8E}#6.0#0"; "MSHFLXGD.OCX"
+Object = "{0BA686C6-F7D3-101A-993E-0000C0EF6F5E}#1.0#0"; "THREED32.ocx"
+Object = "{0ECD9B60-23AA-11D0-B351-00A0C9055D8E}#6.0#0"; "MShflxgd.ocx"
 Begin VB.Form Frm_Radio_Media_Quot 
    BorderStyle     =   0  'None
    Caption         =   "Radio Media Quotation"
@@ -689,7 +689,7 @@ Begin VB.Form Frm_Radio_Media_Quot
             Left            =   1245
             MaxLength       =   14
             TabIndex        =   26
-            Top             =   1200
+            Top             =   1185
             Width           =   2550
          End
          Begin MSComCtl2.DTPicker DT_Date 
@@ -711,7 +711,7 @@ Begin VB.Form Frm_Radio_Media_Quot
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
-            Format          =   240058369
+            Format          =   101711873
             CurrentDate     =   36805
          End
          Begin VB.Label Label2 
@@ -1001,7 +1001,7 @@ Begin VB.Form Frm_Radio_Media_Quot
    Begin VB.PictureBox picToolbar 
       Align           =   1  'Align Top
       Appearance      =   0  'Flat
-      BackColor       =   &H8000000D&
+      BackColor       =   &H00F0F0F0&
       BorderStyle     =   0  'None
       ClipControls    =   0   'False
       ForeColor       =   &H80000008&
@@ -1300,6 +1300,7 @@ Private Sub Load_Brand()
     Dim rs As New ADODB.Recordset
     
     TxtSQl = "SELECT * FROM brand inner join Client on client.client_code = brand.client_code "
+    strLogin_User = "Wibisonog"
     TxtSQl = TxtSQl & " WHERE brand_code IN (SELECT brand_code FROM Media_Security_Catalog WHERE User_name='" & strLogin_User & "' "
     TxtSQl = TxtSQl & " AND position IN ('Implementor','Buyer', 'Admin', 'Supervisor', 'Planner', 'Administrator') and Valid_until > getdate()) and client.special_client_Flag =1"
     rs.Open TxtSQl, ConnERP, adOpenStatic, adLockReadOnly
@@ -1464,7 +1465,7 @@ Private Sub db_Approved_MQ()
     Frm_Radio_View_MQ_Approve.show 1
 End Sub
 
-Private Sub db_Cancel()
+Private Sub db_cancel()
 
     Cbo_Month_MQ.Visible = False
         
@@ -1550,7 +1551,7 @@ Private Sub db_delete()
 
 End Sub
 
-Private Sub db_edit()
+Private Sub db_Edit()
 
     'Check apakah Implementor Brand
     If Not IsValidAccess(strLogin_User, "Implementor", Left(Cbo_Brand.Text, 4)) Then
@@ -1575,16 +1576,18 @@ Private Sub db_History_Revision()
 End Sub
 
 Private Sub db_print()
-    If Cbo_MQ.Text = "" Then
-        MsgBox "Please Select a Media Quotation !", vbExclamation, "Missing Information"
-        Exit Sub
-    End If
-    With Frm_Radio_MQ_Print
-        Set .What_Cbo_Brand = Frm_Radio_Media_Quot.Cbo_Brand
-        Set .What_CBO_IB = Frm_Radio_Media_Quot.Cbo_MQ
-    End With
-    
-    Frm_Radio_MQ_Print.show vbModal
+    MsgBox "Di Coding lama tidak ada Frm_Radio_MQ_Print"
+    Exit Sub
+'    If Cbo_MQ.Text = "" Then
+'        MsgBox "Please Select a Media Quotation !", vbExclamation, "Missing Information"
+'        Exit Sub
+'    End If
+'    With Frm_Radio_MQ_Print
+'        Set .What_Cbo_Brand = Frm_Radio_Media_Quot.Cbo_Brand
+'        Set .What_CBO_IB = Frm_Radio_Media_Quot.Cbo_MQ
+'    End With
+'
+'    Frm_Radio_MQ_Print.show vbModal
     
 End Sub
 
@@ -1645,6 +1648,7 @@ End Sub
 
 Private Sub db_save()
     Dim Last_Index As Integer
+    If isValidate = False Then Exit Sub
     
     Call Save_Data
     'Edit_Flag = False
@@ -1675,6 +1679,26 @@ Private Sub db_save()
     'show_data
     
 End Sub
+
+Function isValidate() As Boolean
+'*****************************************
+'Procedure Name     : isValidate
+'Procedure Function : Validasi.
+'Input Parameter    : -
+'Output Parameter   : -
+'Date               : 10-08-2016
+'LastUpdate/By      : ted / Kreatif
+'*****************************************
+    If Txt_Plan_No.Text = "" Then
+        MsgBox "Empty Plan No!", vbCritical, strApplication_Name
+        Exit Function
+    End If
+    If Flex_Quot.TextMatrix(1, 1) = "" Then
+        MsgBox "Empty Quotation!", vbCritical, strApplication_Name
+        Exit Function
+    End If
+    isValidate = True
+End Function
 
 Private Sub Flex_Quot_Click()
     With Flex_Quot
@@ -2066,7 +2090,7 @@ Private Sub Initial_Grid()
         Flex_Quot.TextMatrix(3, 0) = "Media Supervision Charges"
         Flex_Quot.TextMatrix(4, 0) = "Bonus Fee"
         Flex_Quot.TextMatrix(5, 0) = "Others"
-        Flex_Quot.TextMatrix(6, 0) = "Total Lintas"
+        Flex_Quot.TextMatrix(6, 0) = "Sub Total"
         Flex_Quot.TextMatrix(7, 0) = "Job Number Club Agency"
         Flex_Quot.TextMatrix(8, 0) = "Club Agency Media Sptv. Charges"
         Flex_Quot.TextMatrix(9, 0) = "Grand Total"
@@ -3208,12 +3232,12 @@ Sub SetButtonToolbar(ByVal paIsNormalMode As Boolean, picOBJ) 'TOOLBAR_AI.
         .Enabled = paIsNormalMode
     End With
     
-    With picButton(enButtonType.bieAdd)  'ADD. 4
+    With picButton(enButtonType.bieADD)  'ADD. 4
         .Enabled = paIsNormalMode
         .Visible = paIsNormalMode
     End With
     
-    With picButton(enButtonType.bieEdit) 'EDIT. 5
+    With picButton(enButtonType.bieedit) 'EDIT. 5
         .Enabled = paIsNormalMode
         .Visible = paIsNormalMode
     End With
@@ -3254,12 +3278,12 @@ Sub SetButtonToolbar(ByVal paIsNormalMode As Boolean, picOBJ) 'TOOLBAR_AI.
         .Visible = paIsNormalMode
     End With
     
-    With picButton(enButtonType.biePrint)  'PRINT.
+    With picButton(enButtonType.bieprint)  'PRINT.
         .Enabled = paIsNormalMode
         .Visible = paIsNormalMode
     End With
 
-    With picButton(enButtonType.biecancel) 'CANCEL.
+    With picButton(enButtonType.bieCancel) 'CANCEL.
         .Enabled = Not paIsNormalMode
         .Visible = Not paIsNormalMode
         .Left = picButton(5).Left
@@ -3398,16 +3422,16 @@ Private Sub picButton_Click(Index As Integer)
                 Cbo_MQ.ListIndex = Cbo_MQ.ListCount - 1
             End If
             
-        Case enButtonType.bieAdd  '4 'ADD.
+        Case enButtonType.bieADD  '4 'ADD.
             Call db_add
             
-        Case enButtonType.bieEdit  '5 'EDIT.
-            Call db_edit
+        Case enButtonType.bieedit  '5 'EDIT.
+            Call db_Edit
             
         Case enButtonType.bieDelete  '6 'DELETE.
             Call db_delete
         
-        Case enButtonType.biePrint   '8 'PRINT.
+        Case enButtonType.bieprint   '8 'PRINT.
             Call db_print
         
         Case enButtonType.bieApprove   '66 'APPROVE.
@@ -3428,8 +3452,8 @@ Private Sub picButton_Click(Index As Integer)
         Case enButtonType.bieSave  'SAVE.
             Call db_save
             
-        Case enButtonType.biecancel 'CANCEL.
-            Call db_Cancel
+        Case enButtonType.bieCancel 'CANCEL.
+            Call db_cancel
     End Select
 
 End Sub
@@ -3485,3 +3509,4 @@ Sub setButtonHistory(ByVal blnStatus As Boolean, picOBJ) 'TOOLBAR_AI.
     Next element
 
 End Sub
+

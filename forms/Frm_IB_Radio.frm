@@ -1,10 +1,10 @@
 VERSION 5.00
 Object = "{00025600-0000-0000-C000-000000000046}#5.2#0"; "Crystl32.OCX"
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{0BA686C6-F7D3-101A-993E-0000C0EF6F5E}#1.0#0"; "threed32.ocx"
+Object = "{0BA686C6-F7D3-101A-993E-0000C0EF6F5E}#1.0#0"; "THREED32.ocx"
 Object = "{562E3E04-2C31-4ECE-83F4-4017EEE51D40}#8.0#0"; "todg8.ocx"
-Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFLXGRD.OCX"
-Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "MSMASK32.OCX"
+Object = "{5E9E78A0-531B-11CF-91F6-C2863C385E30}#1.0#0"; "MSFlxGrd.ocx"
+Object = "{C932BA88-4374-101B-A56C-00AA003668DC}#1.1#0"; "msmask32.ocx"
 Object = "{0D452EE1-E08F-101A-852E-02608C4D0BB4}#2.0#0"; "FM20.DLL"
 Begin VB.Form Frm_IB_Radio 
    BorderStyle     =   0  'None
@@ -12,7 +12,7 @@ Begin VB.Form Frm_IB_Radio
    ClientHeight    =   8805
    ClientLeft      =   0
    ClientTop       =   -45
-   ClientWidth     =   14685
+   ClientWidth     =   13095
    ControlBox      =   0   'False
    BeginProperty Font 
       Name            =   "Tahoma"
@@ -28,7 +28,7 @@ Begin VB.Form Frm_IB_Radio
    MDIChild        =   -1  'True
    MinButton       =   0   'False
    ScaleHeight     =   8805
-   ScaleWidth      =   14685
+   ScaleWidth      =   13095
    ShowInTaskbar   =   0   'False
    Begin Threed.SSPanel pnlMain 
       Align           =   1  'Align Top
@@ -36,9 +36,9 @@ Begin VB.Form Frm_IB_Radio
       Left            =   0
       TabIndex        =   17
       Top             =   750
-      Width           =   14685
+      Width           =   13095
       _Version        =   65536
-      _ExtentX        =   25903
+      _ExtentX        =   23098
       _ExtentY        =   13520
       _StockProps     =   15
       BackColor       =   15790320
@@ -65,7 +65,7 @@ Begin VB.Form Frm_IB_Radio
          EndProperty
          ForeColor       =   &H80000008&
          Height          =   3480
-         Left            =   135
+         Left            =   150
          TabIndex        =   51
          Top             =   1620
          Width           =   12885
@@ -103,7 +103,7 @@ Begin VB.Form Frm_IB_Radio
             Width           =   1180
          End
          Begin VB.CommandButton cmdMateri 
-            Caption         =   "Materi"
+            Caption         =   "Material"
             BeginProperty Font 
                Name            =   "Tahoma"
                Size            =   8.25
@@ -135,7 +135,7 @@ Begin VB.Form Frm_IB_Radio
             Top             =   240
             Width           =   1800
          End
-         Begin MSFlexGridLib.MSFlexGrid msgCity 
+         Begin MSFlexGridLib.MSFlexGrid dbgCity 
             Height          =   2295
             Left            =   2370
             TabIndex        =   56
@@ -145,6 +145,8 @@ Begin VB.Form Frm_IB_Radio
             _ExtentY        =   4048
             _Version        =   393216
             FixedCols       =   0
+            BackColorFixed  =   12356167
+            ForeColorFixed  =   16777215
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Tahoma"
                Size            =   8.25
@@ -177,13 +179,13 @@ Begin VB.Form Frm_IB_Radio
          End
          Begin TrueOleDBGrid80.TDBGrid tdgPlan 
             Bindings        =   "Frm_IB_Radio.frx":0000
-            Height          =   2235
-            Left            =   240
+            Height          =   2250
+            Left            =   360
             TabIndex        =   63
-            Top             =   720
+            Top             =   750
             Width           =   1860
             _ExtentX        =   3281
-            _ExtentY        =   3942
+            _ExtentY        =   3969
             _LayoutType     =   4
             _RowHeight      =   -2147483647
             _WasPersistedAsPixels=   0
@@ -360,7 +362,7 @@ Begin VB.Form Frm_IB_Radio
             Height          =   255
             Left            =   90
             TabIndex        =   59
-            Top             =   270
+            Top             =   255
             Width           =   1245
          End
          Begin VB.Label lblPlanDetail 
@@ -450,7 +452,7 @@ Begin VB.Form Frm_IB_Radio
                Strikethrough   =   0   'False
             EndProperty
             Height          =   325
-            Left            =   5550
+            Left            =   5565
             MaxLength       =   30
             TabIndex        =   23
             Top             =   630
@@ -483,7 +485,7 @@ Begin VB.Form Frm_IB_Radio
                Strikethrough   =   0   'False
             EndProperty
             Height          =   315
-            Left            =   1575
+            Left            =   1560
             TabIndex        =   21
             Top             =   240
             Width           =   1785
@@ -506,7 +508,7 @@ Begin VB.Form Frm_IB_Radio
                Italic          =   0   'False
                Strikethrough   =   0   'False
             EndProperty
-            Format          =   238419969
+            Format          =   111607809
             CurrentDate     =   36805
          End
          Begin VB.Label lblMediaPlanNo 
@@ -755,7 +757,6 @@ Begin VB.Form Frm_IB_Radio
          Top             =   5685
          Width           =   3630
          Begin VB.PictureBox picApproved 
-            BackColor       =   &H00F0F0F0&
             BorderStyle     =   0  'None
             Height          =   1290
             Left            =   465
@@ -777,6 +778,7 @@ Begin VB.Form Frm_IB_Radio
                   Italic          =   0   'False
                   Strikethrough   =   0   'False
                EndProperty
+               ForeColor       =   &H000000C0&
                Height          =   240
                Left            =   1755
                TabIndex        =   49
@@ -784,6 +786,7 @@ Begin VB.Form Frm_IB_Radio
                Width           =   810
             End
             Begin VB.Label lblDateApp 
+               Alignment       =   2  'Center
                BackStyle       =   0  'Transparent
                Caption         =   "12/12/2001"
                BeginProperty Font 
@@ -795,8 +798,9 @@ Begin VB.Form Frm_IB_Radio
                   Italic          =   0   'False
                   Strikethrough   =   0   'False
                EndProperty
+               ForeColor       =   &H000000C0&
                Height          =   255
-               Left            =   225
+               Left            =   165
                TabIndex        =   48
                Top             =   360
                Width           =   2355
@@ -814,11 +818,12 @@ Begin VB.Form Frm_IB_Radio
                   Italic          =   0   'False
                   Strikethrough   =   0   'False
                EndProperty
+               ForeColor       =   &H000000C0&
                Height          =   315
-               Left            =   435
+               Left            =   -45
                TabIndex        =   47
                Top             =   0
-               Width           =   2460
+               Width           =   2820
             End
          End
          Begin VB.Label lblStatus 
@@ -956,17 +961,18 @@ Begin VB.Form Frm_IB_Radio
       Align           =   2  'Align Bottom
       Appearance      =   0  'Flat
       AutoSize        =   -1  'True
+      BackColor       =   &H00F0F0F0&
       BorderStyle     =   0  'None
       ClipControls    =   0   'False
       ForeColor       =   &H80000008&
       Height          =   330
       Left            =   0
       ScaleHeight     =   330
-      ScaleWidth      =   14685
+      ScaleWidth      =   13095
       TabIndex        =   9
       TabStop         =   0   'False
       Top             =   8475
-      Width           =   14685
+      Width           =   13095
       Begin VB.PictureBox picButton 
          Appearance      =   0  'Flat
          AutoSize        =   -1  'True
@@ -1100,17 +1106,17 @@ Begin VB.Form Frm_IB_Radio
    Begin VB.PictureBox picToolbar 
       Align           =   1  'Align Top
       Appearance      =   0  'Flat
-      BackColor       =   &H8000000D&
+      BackColor       =   &H00F0F0F0&
       BorderStyle     =   0  'None
       ClipControls    =   0   'False
       ForeColor       =   &H80000008&
       Height          =   750
       Left            =   0
       ScaleHeight     =   750
-      ScaleWidth      =   14685
+      ScaleWidth      =   13095
       TabIndex        =   0
       Top             =   0
-      Width           =   14685
+      Width           =   13095
       Begin VB.PictureBox picButton 
          Appearance      =   0  'Flat
          BackColor       =   &H00F0F0F0&
@@ -1374,6 +1380,8 @@ Dim strPrivTransac As String
 
 Private Sub Form_Load()
 
+    
+    
     Me.AutoRedraw = True
    ' Call VGradient(Me, &HFF8090, &HFF8090, Me.Line2.Y1, Me.Height, 0, Me.Width)
     
@@ -2026,8 +2034,8 @@ Public Sub ClearForm()
     cboStartingMonth.Text = ""
     
     medGrandTotal = 0
-    msgCity.Clear
-    msgCity.Rows = 2
+    dbgCity.Clear
+    dbgCity.Rows = 2
     msgMix.Clear
     msgMix.Rows = 2
     
@@ -2345,7 +2353,7 @@ Private Sub LoadDetail(ByVal strIBID As String, ByVal IntYear As Integer, intMon
     
     Dim blnIsStation As Boolean 'dw
     Dim recCek As New ADODB.Recordset 'dw
-    
+
     'dw - cek if ib is by station or not..
     recCek.Open "SELECT IsCity FROM IB_Radio WHERE ib_id='" & strIBID & "'", ConnERP, adOpenStatic, adLockReadOnly
     
@@ -2365,48 +2373,34 @@ Private Sub LoadDetail(ByVal strIBID As String, ByVal IntYear As Integer, intMon
 
         'Load Plan Detail Data Temp7
         If Frm_IB_Radio.recRadioPlanTemp.RecordCount > 0 Then
-'            msgPlan.Rows = 1
-'            msgPlan.cols = 1
-'            msgPlan.TextMatrix(0, 0) = "BUDGET"
-'            msgPlan.ColWidth(0) = 2000
-        
-            Frm_IB_Radio.recRadioPlanTemp.MoveFirst
+           Frm_IB_Radio.recRadioPlanTemp.MoveFirst
         End If
         intPosRow = 0
-'        With Frm_IB_Radio.recRadioPlanTemp
-'            .Filter = ""
-'            .Filter = StrFilter
-'            Do While .EOF = False
-'                intPosRow = intPosRow + 1
-'                msgPlan.Rows = intPosRow + 1
-'                msgPlan.TextMatrix(intPosRow, 0) = Format(.Fields("Budget").Value, "##,0")
-'                .MoveNext
-'            Loop
-'        End With
+
         
-        msgCity.Rows = 1
+        dbgCity.Rows = 1
         
         If optCity.Value Then
             'view by city(Edit)
                 'Load City Temp
             If Frm_IB_Radio.recPlanDetailTemp.RecordCount > 0 Then
-                msgCity.Rows = 1
-                msgCity.cols = 7
-                msgCity.TextMatrix(0, 0) = "SCHEDULE"
-                msgCity.TextMatrix(0, 1) = "SPOT/DAY"
-                msgCity.TextMatrix(0, 2) = "SALES AREA"
-                msgCity.TextMatrix(0, 3) = "URBAN AREA"
-                msgCity.TextMatrix(0, 4) = "RURAL AREA"
-                msgCity.TextMatrix(0, 5) = "MATERIAL ID"
-                msgCity.TextMatrix(0, 6) = "MATERIAL MIX"
-                
-                msgCity.ColWidth(0) = 2000
-                msgCity.ColWidth(1) = 1000
-                msgCity.ColWidth(2) = 1300
-                msgCity.ColWidth(3) = 1000
-                msgCity.ColWidth(4) = 1000
-                msgCity.ColWidth(5) = 1200
-                msgCity.ColWidth(6) = 1300
+                dbgCity.Rows = 1
+                dbgCity.cols = 7
+                dbgCity.TextMatrix(0, 0) = "SCHEDULE"
+                dbgCity.TextMatrix(0, 1) = "SPOT/DAY"
+                dbgCity.TextMatrix(0, 2) = "SALES AREA"
+                dbgCity.TextMatrix(0, 3) = "URBAN AREA"
+                dbgCity.TextMatrix(0, 4) = "RURAL AREA"
+                dbgCity.TextMatrix(0, 5) = "MATERIAL ID"
+                dbgCity.TextMatrix(0, 6) = "MATERIAL MIX"
+                                
+                dbgCity.ColWidth(0) = 2000
+                dbgCity.ColWidth(1) = 1000
+                dbgCity.ColWidth(2) = 1300
+                dbgCity.ColWidth(3) = 1000
+                dbgCity.ColWidth(4) = 1000
+                dbgCity.ColWidth(5) = 1200
+                dbgCity.ColWidth(6) = 1300
                 
                 Frm_IB_Radio.recPlanDetailTemp.MoveFirst
             End If
@@ -2418,18 +2412,18 @@ Private Sub LoadDetail(ByVal strIBID As String, ByVal IntYear As Integer, intMon
                 Do While .EOF = False
                     intRowMaterial = 0
                     intPosRow = intPosRow + 1
-                    msgCity.Rows = intPosRow + 1
+                    dbgCity.Rows = intPosRow + 1
                     
                     If Frm_IB_Radio.cboPlanDetail.Text = "City" Then 'dw
-                        msgCity.TextMatrix(intPosRow, 0) = .Fields("Schedule").Value
+                        dbgCity.TextMatrix(intPosRow, 0) = .Fields("Schedule").Value
                     ElseIf Frm_IB_Radio.cboPlanDetail.Text = "Station" Then
-                        msgCity.TextMatrix(intPosRow, 0) = Trim(Mid(.Fields("Schedule").Value, 1, InStr(.Fields("Schedule").Value, "-") - 1)) 'dw
+                        dbgCity.TextMatrix(intPosRow, 0) = Trim(Mid(.Fields("Schedule").Value, 1, InStr(.Fields("Schedule").Value, "-") - 1)) 'dw
                     End If
                     
-                    msgCity.TextMatrix(intPosRow, 1) = .Fields("Spot").Value
-                    msgCity.TextMatrix(intPosRow, 2) = GetCityName(Trim(.Fields("City_Code").Value))
-                    msgCity.TextMatrix(intPosRow, 3) = IIf(.Fields("Urban_Flag").Value = 1, "x", "")
-                    msgCity.TextMatrix(intPosRow, 4) = IIf(.Fields("rural_Flag").Value = 1, "x", "")
+                    dbgCity.TextMatrix(intPosRow, 1) = .Fields("Spot").Value
+                    dbgCity.TextMatrix(intPosRow, 2) = GetCityName(Trim(.Fields("City_Code").Value))
+                    dbgCity.TextMatrix(intPosRow, 3) = IIf(.Fields("Urban_Flag").Value = 1, "x", "")
+                    dbgCity.TextMatrix(intPosRow, 4) = IIf(.Fields("rural_Flag").Value = 1, "x", "")
                     
                     'get filter string
                     strFilterMateri = StrFilter & " AND Schedule ='" & Clear_String(.Fields("Schedule").Value) & "'"
@@ -2440,22 +2434,22 @@ Private Sub LoadDetail(ByVal strIBID As String, ByVal IntYear As Integer, intMon
                     
                     While Not recPlanDetailMaterialTemp.EOF
                         If intRowMaterial = 0 Then
-                            msgCity.TextMatrix(intPosRow, 5) = recPlanDetailMaterialTemp.Fields("Material_Id").Value
-                            msgCity.TextMatrix(intPosRow, 6) = recPlanDetailMaterialTemp.Fields("Material_Mix").Value
+                            dbgCity.TextMatrix(intPosRow, 5) = recPlanDetailMaterialTemp.Fields("Material_Id").Value
+                            dbgCity.TextMatrix(intPosRow, 6) = recPlanDetailMaterialTemp.Fields("Material_Mix").Value
                         Else
                             intPosRow = intPosRow + 1
-                            msgCity.Rows = intPosRow + 1
+                            dbgCity.Rows = intPosRow + 1
                             
-                            'msgCity.TextMatrix(intPosRow, 0) = .Fields("Schedule").Value
-                            msgCity.TextMatrix(intPosRow, 0) = Trim(Mid(.Fields("Schedule").Value, 1, InStr(.Fields("Schedule").Value, "-") - 1))
-                            msgCity.TextMatrix(intPosRow, 1) = .Fields("Spot").Value
+                            'dbgCity.TextMatrix(intPosRow, 0) = .Fields("Schedule").Value
+                            dbgCity.TextMatrix(intPosRow, 0) = Trim(Mid(.Fields("Schedule").Value, 1, InStr(.Fields("Schedule").Value, "-") - 1))
+                            dbgCity.TextMatrix(intPosRow, 1) = .Fields("Spot").Value
                             
-                            msgCity.TextMatrix(intPosRow, 2) = GetCityName(Trim(.Fields("City_Code").Value))
-                            msgCity.TextMatrix(intPosRow, 3) = IIf(.Fields("Urban_Flag").Value = 1, "x", "")
-                            msgCity.TextMatrix(intPosRow, 4) = IIf(.Fields("rural_Flag").Value = 1, "x", "")
+                            dbgCity.TextMatrix(intPosRow, 2) = GetCityName(Trim(.Fields("City_Code").Value))
+                            dbgCity.TextMatrix(intPosRow, 3) = IIf(.Fields("Urban_Flag").Value = 1, "x", "")
+                            dbgCity.TextMatrix(intPosRow, 4) = IIf(.Fields("rural_Flag").Value = 1, "x", "")
                             
-                            msgCity.TextMatrix(intPosRow, 5) = recPlanDetailMaterialTemp.Fields("Material_Id").Value
-                            msgCity.TextMatrix(intPosRow, 6) = recPlanDetailMaterialTemp.Fields("Material_Mix").Value
+                            dbgCity.TextMatrix(intPosRow, 5) = recPlanDetailMaterialTemp.Fields("Material_Id").Value
+                            dbgCity.TextMatrix(intPosRow, 6) = recPlanDetailMaterialTemp.Fields("Material_Mix").Value
                         End If
                         
                         intRowMaterial = intRowMaterial + 1
@@ -2468,20 +2462,20 @@ Private Sub LoadDetail(ByVal strIBID As String, ByVal IntYear As Integer, intMon
         Else
             'view by area (Edit)
             If Frm_IB_Radio.recPlanDetailTemp.RecordCount > 0 Then
-                msgCity.Rows = 1
-                msgCity.cols = 5
-                msgCity.TextMatrix(0, 0) = "SCHEDULE"
-                msgCity.TextMatrix(0, 1) = "SPOT/DAY"
-                msgCity.TextMatrix(0, 2) = "SALES AREA"
-                msgCity.TextMatrix(0, 3) = "MATERIAL ID"
-                msgCity.TextMatrix(0, 4) = "MATERIAL MIX"
+                dbgCity.Rows = 1
+                dbgCity.cols = 5
+                dbgCity.TextMatrix(0, 0) = "SCHEDULE"
+                dbgCity.TextMatrix(0, 1) = "SPOT/DAY"
+                dbgCity.TextMatrix(0, 2) = "SALES AREA"
+                dbgCity.TextMatrix(0, 3) = "MATERIAL ID"
+                dbgCity.TextMatrix(0, 4) = "MATERIAL MIX"
                     
-                msgCity.ColWidth(0) = 2000
-                msgCity.ColWidth(1) = 1000
-                msgCity.ColWidth(2) = 2500
-                msgCity.ColWidth(3) = 1200
-                msgCity.ColWidth(4) = 1700
-                    
+                dbgCity.ColWidth(0) = 2000
+                dbgCity.ColWidth(1) = 1000
+                dbgCity.ColWidth(2) = 2500
+                dbgCity.ColWidth(3) = 1200
+                dbgCity.ColWidth(4) = 1700
+                
                 Frm_IB_Radio.recPlanDetailTemp.MoveFirst
             End If
         
@@ -2494,20 +2488,20 @@ Private Sub LoadDetail(ByVal strIBID As String, ByVal IntYear As Integer, intMon
                     If intPosRow = 0 Then
                         blnWrite = True
                         intPosRow = intPosRow + 1
-                        msgCity.Rows = intPosRow + 1
+                        dbgCity.Rows = intPosRow + 1
                         
                         'put to temp
                         strAreaCode = .Fields("Area_Code").Value
                         
                         'untuk rec pertama langsung tulis areanya
                         If Frm_IB_Radio.cboPlanDetail.Text = "City" Then
-                            msgCity.TextMatrix(intPosRow, 0) = .Fields("Schedule").Value
+                            dbgCity.TextMatrix(intPosRow, 0) = .Fields("Schedule").Value
                         ElseIf Frm_IB_Radio.cboPlanDetail.Text = "Station" Then
-                            msgCity.TextMatrix(intPosRow, 0) = Trim(Mid(.Fields("Schedule").Value, 1, InStr(.Fields("Schedule").Value, "-") - 1)) 'dw
+                            dbgCity.TextMatrix(intPosRow, 0) = Trim(Mid(.Fields("Schedule").Value, 1, InStr(.Fields("Schedule").Value, "-") - 1)) 'dw
                         End If
                         
-                        msgCity.TextMatrix(intPosRow, 1) = .Fields("Spot").Value
-                        msgCity.TextMatrix(intPosRow, 2) = .Fields("Area_Code").Value
+                        dbgCity.TextMatrix(intPosRow, 1) = .Fields("Spot").Value
+                        dbgCity.TextMatrix(intPosRow, 2) = .Fields("Area_Code").Value
                     Else
                         If strAreaCode = .Fields("Area_Code").Value Then
                             blnWrite = False
@@ -2515,16 +2509,16 @@ Private Sub LoadDetail(ByVal strIBID As String, ByVal IntYear As Integer, intMon
                         Else
                             blnWrite = True
                             intPosRow = intPosRow + 1
-                            msgCity.Rows = intPosRow + 1
+                            dbgCity.Rows = intPosRow + 1
                             
                             'put to temp
                             strAreaCode = .Fields("Area_Code").Value
                             
                             'untuk rec pertama langsung tulis areanya
-                            'msgCity.TextMatrix(intPosRow, 0) = .Fields("Schedule").Value
-                            msgCity.TextMatrix(intPosRow, 0) = Trim(Mid(.Fields("Schedule").Value, 1, InStr(.Fields("Schedule").Value, "-") - 1)) 'dw
-                            msgCity.TextMatrix(intPosRow, 1) = .Fields("Spot").Value
-                            msgCity.TextMatrix(intPosRow, 2) = .Fields("Area_Code").Value
+                            'dbgCity.TextMatrix(intPosRow, 0) = .Fields("Schedule").Value
+                            dbgCity.TextMatrix(intPosRow, 0) = Trim(Mid(.Fields("Schedule").Value, 1, InStr(.Fields("Schedule").Value, "-") - 1)) 'dw
+                            dbgCity.TextMatrix(intPosRow, 1) = .Fields("Spot").Value
+                            dbgCity.TextMatrix(intPosRow, 2) = .Fields("Area_Code").Value
                         End If
                     End If
                     
@@ -2539,25 +2533,25 @@ Private Sub LoadDetail(ByVal strIBID As String, ByVal IntYear As Integer, intMon
                             If intRowMaterial = 0 Then
                                 strMaterialId = recPlanDetailMaterialTemp.Fields("Material_Id").Value & "|" & recPlanDetailMaterialTemp.Fields("Material_Mix").Value
                                 
-                                msgCity.TextMatrix(intPosRow, 3) = recPlanDetailMaterialTemp.Fields("Material_Id").Value
-                                msgCity.TextMatrix(intPosRow, 4) = recPlanDetailMaterialTemp.Fields("Material_Mix").Value
+                                dbgCity.TextMatrix(intPosRow, 3) = recPlanDetailMaterialTemp.Fields("Material_Id").Value
+                                dbgCity.TextMatrix(intPosRow, 4) = recPlanDetailMaterialTemp.Fields("Material_Mix").Value
                             Else
                                 If InStr(1, strMaterialId, recPlanDetailMaterialTemp.Fields("Material_Id").Value & "|" & recPlanDetailMaterialTemp.Fields("Material_Mix").Value) > 0 Then
                                     'do nothing
                                 Else
                                     strMaterialId = strMaterialId & "|" & recPlanDetailMaterialTemp.Fields("Material_Id").Value & "|" & recPlanDetailMaterialTemp.Fields("Material_Mix").Value
                                     intPosRow = intPosRow + 1
-                                    msgCity.Rows = intPosRow + 1
+                                    dbgCity.Rows = intPosRow + 1
                                     
                                     If Me.cboPlanDetail.Text = "City" Then
-                                        msgCity.TextMatrix(intPosRow, 0) = .Fields("Schedule").Value
+                                        dbgCity.TextMatrix(intPosRow, 0) = .Fields("Schedule").Value
                                     Else
-                                        msgCity.TextMatrix(intPosRow, 0) = Trim(Mid(.Fields("Schedule").Value, 1, InStr(.Fields("Schedule").Value, "-") - 1))
+                                        dbgCity.TextMatrix(intPosRow, 0) = Trim(Mid(.Fields("Schedule").Value, 1, InStr(.Fields("Schedule").Value, "-") - 1))
                                     End If
-                                    msgCity.TextMatrix(intPosRow, 1) = .Fields("Spot").Value
-                                    msgCity.TextMatrix(intPosRow, 2) = .Fields("Area_Code").Value
-                                    msgCity.TextMatrix(intPosRow, 3) = recPlanDetailMaterialTemp.Fields("Material_Id").Value
-                                    msgCity.TextMatrix(intPosRow, 4) = recPlanDetailMaterialTemp.Fields("Material_Mix").Value
+                                    dbgCity.TextMatrix(intPosRow, 1) = .Fields("Spot").Value
+                                    dbgCity.TextMatrix(intPosRow, 2) = .Fields("Area_Code").Value
+                                    dbgCity.TextMatrix(intPosRow, 3) = recPlanDetailMaterialTemp.Fields("Material_Id").Value
+                                    dbgCity.TextMatrix(intPosRow, 4) = recPlanDetailMaterialTemp.Fields("Material_Mix").Value
                                 
                                 End If
                             End If
@@ -2637,41 +2631,41 @@ NextRec:            .MoveNext
             recIBPlan.CursorLocation = adUseClient
             recIBPlan.Open strQuery, ConnERP, adOpenStatic, adLockReadOnly
             
-            msgCity.Rows = recIBPlan.RecordCount + 1
-            msgCity.cols = 7
+            dbgCity.Rows = recIBPlan.RecordCount + 1
+            dbgCity.cols = 7
                                    
-            msgCity.TextMatrix(0, 0) = "SCHEDULE"
-            msgCity.TextMatrix(0, 1) = "SPOT/DAY"
-            msgCity.TextMatrix(0, 2) = "SALES AREA"
-            msgCity.TextMatrix(0, 3) = "URBAN AREA"
-            msgCity.TextMatrix(0, 4) = "RURAL AREA"
-            msgCity.TextMatrix(0, 5) = "MATERIAL ID"
-            msgCity.TextMatrix(0, 6) = "MATERIAL MIX"
+            dbgCity.TextMatrix(0, 0) = "SCHEDULE"
+            dbgCity.TextMatrix(0, 1) = "SPOT/DAY"
+            dbgCity.TextMatrix(0, 2) = "SALES AREA"
+            dbgCity.TextMatrix(0, 3) = "URBAN AREA"
+            dbgCity.TextMatrix(0, 4) = "RURAL AREA"
+            dbgCity.TextMatrix(0, 5) = "MATERIAL ID"
+            dbgCity.TextMatrix(0, 6) = "MATERIAL MIX"
                                 
-            msgCity.ColWidth(0) = 2000
-            msgCity.ColWidth(1) = 1000
-            msgCity.ColWidth(2) = 1300
-            msgCity.ColWidth(3) = 1000
-            msgCity.ColWidth(4) = 1000
-            msgCity.ColWidth(5) = 1200
-            msgCity.ColWidth(6) = 1300
+            dbgCity.ColWidth(0) = 2000
+            dbgCity.ColWidth(1) = 1000
+            dbgCity.ColWidth(2) = 1300
+            dbgCity.ColWidth(3) = 1000
+            dbgCity.ColWidth(4) = 1000
+            dbgCity.ColWidth(5) = 1200
+            dbgCity.ColWidth(6) = 1300
                 
             intPosRow = 0
             With recIBPlan
                 Do While .EOF = False
                     intPosRow = intPosRow + 1
                     If Frm_IB_Radio.cboPlanDetail.Text = "City" Then 'dw
-                        msgCity.TextMatrix(intPosRow, 0) = IIf(IsNull(.Fields("Schedule").Value), "", .Fields("Schedule").Value)
+                        dbgCity.TextMatrix(intPosRow, 0) = IIf(IsNull(.Fields("Schedule").Value), "", .Fields("Schedule").Value)
                     ElseIf Frm_IB_Radio.cboPlanDetail.Text = "Station" Then
-                        msgCity.TextMatrix(intPosRow, 0) = IIf(IsNull(.Fields("Schedule").Value), "", Trim(Mid(.Fields("Schedule").Value, 1, InStr(.Fields("Schedule").Value, "-") - 1))) 'dw
+                        dbgCity.TextMatrix(intPosRow, 0) = IIf(IsNull(.Fields("Schedule").Value), "", Trim(Mid(.Fields("Schedule").Value, 1, InStr(.Fields("Schedule").Value, "-") - 1))) 'dw
                     End If
                     
-                    msgCity.TextMatrix(intPosRow, 1) = IIf(IsNull(.Fields("Spot").Value), "", .Fields("Spot").Value)
-                    msgCity.TextMatrix(intPosRow, 2) = IIf(IsNull(.Fields("City").Value), "", .Fields("City").Value)
-                    msgCity.TextMatrix(intPosRow, 3) = IIf(.Fields("Urban_Flag").Value = 1, "x", "")
-                    msgCity.TextMatrix(intPosRow, 4) = IIf(.Fields("rural_Flag").Value = 1, "x", "")
-                    msgCity.TextMatrix(intPosRow, 5) = IIf(IsNull(.Fields("Material_Id").Value), "", .Fields("Material_Id").Value)
-                    msgCity.TextMatrix(intPosRow, 6) = FormatNumber(IIf(IsNull(.Fields("Material_Mix").Value), "0", .Fields("Material_Mix").Value), 0)
+                    dbgCity.TextMatrix(intPosRow, 1) = IIf(IsNull(.Fields("Spot").Value), "", .Fields("Spot").Value)
+                    dbgCity.TextMatrix(intPosRow, 2) = IIf(IsNull(.Fields("City").Value), "", .Fields("City").Value)
+                    dbgCity.TextMatrix(intPosRow, 3) = IIf(.Fields("Urban_Flag").Value = 1, "x", "")
+                    dbgCity.TextMatrix(intPosRow, 4) = IIf(.Fields("rural_Flag").Value = 1, "x", "")
+                    dbgCity.TextMatrix(intPosRow, 5) = IIf(IsNull(.Fields("Material_Id").Value), "", .Fields("Material_Id").Value)
+                    dbgCity.TextMatrix(intPosRow, 6) = FormatNumber(IIf(IsNull(.Fields("Material_Mix").Value), "0", .Fields("Material_Mix").Value), 0)
                     .MoveNext
                 Loop
             End With
@@ -2688,21 +2682,22 @@ NextRec:            .MoveNext
             
             recIBPlan.CursorLocation = adUseClient
             recIBPlan.Open strQuery, ConnERP, adOpenStatic, adLockReadOnly
-            
-            msgCity.Rows = recIBPlan.RecordCount + 1
-            msgCity.cols = 5
+            dbgCity.Row = 0
+            dbgCity.BackColorFixed = &HBC8A47
+            dbgCity.Rows = recIBPlan.RecordCount + 1
+            dbgCity.cols = 5
                                     
-            msgCity.TextMatrix(0, 0) = "SCHEDULE"
-            msgCity.TextMatrix(0, 1) = "SPOT/DAY"
-            msgCity.TextMatrix(0, 2) = "SALES AREA"
-            msgCity.TextMatrix(0, 3) = "MATERIAL ID"
-            msgCity.TextMatrix(0, 4) = "MATERIAL MIX"
+            dbgCity.TextMatrix(0, 0) = "SCHEDULE"
+            dbgCity.TextMatrix(0, 1) = "SPOT/DAY"
+            dbgCity.TextMatrix(0, 2) = "SALES AREA"
+            dbgCity.TextMatrix(0, 3) = "MATERIAL ID"
+            dbgCity.TextMatrix(0, 4) = "MATERIAL MIX"
                    
-            msgCity.ColWidth(0) = 2000
-            msgCity.ColWidth(1) = 1000
-            msgCity.ColWidth(2) = 2500
-            msgCity.ColWidth(3) = 1200
-            msgCity.ColWidth(4) = 1700
+            dbgCity.ColWidth(0) = 2000
+            dbgCity.ColWidth(1) = 1000
+            dbgCity.ColWidth(2) = 2500
+            dbgCity.ColWidth(3) = 1200
+            dbgCity.ColWidth(4) = 1700
                         
             intPosRow = 0
             With recIBPlan
@@ -2710,15 +2705,15 @@ NextRec:            .MoveNext
                     intPosRow = intPosRow + 1
                     
                     If Frm_IB_Radio.cboPlanDetail.Text = "City" Then 'dw
-                        msgCity.TextMatrix(intPosRow, 0) = IIf(IsNull(.Fields("Schedule").Value), "", .Fields("Schedule").Value)
+                        dbgCity.TextMatrix(intPosRow, 0) = IIf(IsNull(.Fields("Schedule").Value), "", .Fields("Schedule").Value)
                     ElseIf Frm_IB_Radio.cboPlanDetail.Text = "Station" Then
-                        msgCity.TextMatrix(intPosRow, 0) = IIf(IsNull(.Fields("Schedule").Value), "", Trim(Mid(.Fields("Schedule").Value, 1, InStr(.Fields("Schedule").Value, "-") - 1))) 'dw
+                        dbgCity.TextMatrix(intPosRow, 0) = IIf(IsNull(.Fields("Schedule").Value), "", Trim(Mid(.Fields("Schedule").Value, 1, InStr(.Fields("Schedule").Value, "-") - 1))) 'dw
                     End If
                     
-                    msgCity.TextMatrix(intPosRow, 1) = IIf(IsNull(.Fields("Spot").Value), "", .Fields("Spot").Value)
-                    msgCity.TextMatrix(intPosRow, 2) = IIf(IsNull(.Fields("Area_Code").Value), "", .Fields("Area_Code").Value)
-                    msgCity.TextMatrix(intPosRow, 3) = IIf(IsNull(.Fields("Material_Id").Value), "", .Fields("Material_Id").Value)
-                    msgCity.TextMatrix(intPosRow, 4) = FormatNumber(IIf(IsNull(.Fields("Material_Mix").Value), "0", .Fields("Material_Mix").Value), 0)
+                    dbgCity.TextMatrix(intPosRow, 1) = IIf(IsNull(.Fields("Spot").Value), "", .Fields("Spot").Value)
+                    dbgCity.TextMatrix(intPosRow, 2) = IIf(IsNull(.Fields("Area_Code").Value), "", .Fields("Area_Code").Value)
+                    dbgCity.TextMatrix(intPosRow, 3) = IIf(IsNull(.Fields("Material_Id").Value), "", .Fields("Material_Id").Value)
+                    dbgCity.TextMatrix(intPosRow, 4) = FormatNumber(IIf(IsNull(.Fields("Material_Mix").Value), "0", .Fields("Material_Mix").Value), 0)
                     .MoveNext
                 Loop
             End With
@@ -3231,23 +3226,23 @@ Private Sub fraClientApproval_DblClick()
 End Sub
 
 Private Sub InitGrids()
-    msgCity.Rows = 1
-    msgCity.cols = 7
-    msgCity.TextMatrix(0, 0) = "SCHEDULE"
-    msgCity.TextMatrix(0, 1) = "SPOT/DAY"
-    msgCity.TextMatrix(0, 2) = "SALES AREA"
-    msgCity.TextMatrix(0, 3) = "URBAN AREA"
-    msgCity.TextMatrix(0, 4) = "RURAL AREA"
-    msgCity.TextMatrix(0, 5) = "MATERIAL ID"
-    msgCity.TextMatrix(0, 6) = "MATERIAL MIX"
+    dbgCity.Rows = 1
+    dbgCity.cols = 7
+    dbgCity.TextMatrix(0, 0) = "SCHEDULE"
+    dbgCity.TextMatrix(0, 1) = "SPOT/DAY"
+    dbgCity.TextMatrix(0, 2) = "SALES AREA"
+    dbgCity.TextMatrix(0, 3) = "URBAN AREA"
+    dbgCity.TextMatrix(0, 4) = "RURAL AREA"
+    dbgCity.TextMatrix(0, 5) = "MATERIAL ID"
+    dbgCity.TextMatrix(0, 6) = "MATERIAL MIX"
     
-    msgCity.ColWidth(0) = 2000
-    msgCity.ColWidth(1) = 1000
-    msgCity.ColWidth(2) = 1300
-    msgCity.ColWidth(3) = 1000
-    msgCity.ColWidth(4) = 1000
-    msgCity.ColWidth(5) = 1200
-    msgCity.ColWidth(6) = 1300
+    dbgCity.ColWidth(0) = 2000
+    dbgCity.ColWidth(1) = 1000
+    dbgCity.ColWidth(2) = 1300
+    dbgCity.ColWidth(3) = 1000
+    dbgCity.ColWidth(4) = 1000
+    dbgCity.ColWidth(5) = 1200
+    dbgCity.ColWidth(6) = 1300
 
 '    msgPlan.Rows = 1
 '    msgPlan.cols = 1
@@ -3468,12 +3463,38 @@ Sub AdjustSizeForm()
     fraPlanMonth.Width = Me.Width - (fraPlanMonth.Left * 2)
     cmdMateri.Left = fraPlanMonth.Width - cmdMateri.Width - 300
     cmdEditPlan.Left = cmdMateri.Left
-    msgCity.Width = fraPlanMonth.Width - msgCity.Left - cmdMateri.Width - 450
+    dbgCity.Width = fraPlanMonth.Width - dbgCity.Left - cmdMateri.Width - 450
     fraClientApproval.Width = pnlMain.Width - fraClientApproval.Left - 150
     picApproved.Left = ((fraClientApproval.Width / 2)) - ((picApproved.Width) / 2) 'fraClientApproval.Width - (picApproved.Left * 2)
     txtMediaPlanNo.Width = fraIB.Width - txtMediaPlanNo.Left - 150
     txtPrimaryTarget.Width = txtMediaPlanNo.Width
-
+'    pnl_Main.Height = Me.ScaleHeight - picToolbar.Height - picStatusBar.Height
+'    fra_Deliverable.Height = pnl_Main.Height - (fra_Deliverable.Top + 100)
+'    SSTab3.Height = fra_Deliverable.Height - (SSTab3.Top) - 150
+'    txtOther_Recomedation.Height = SSTab3.Height - (txtOther_Recomedation.Top) - 150
+'    txtAggreed_Channel_shortlist.Height = txtOther_Recomedation.Height
+'    fra_DeliverableChannel.Height = pnl_Main.Height - (fra_DeliverableChannel.Top + 100)
+'    fraFilter.Width = pnl_Main.Width - (fraFilter.Left * 2)
+'    lineFilter.X1 = fraFilter.Width / 2
+'    lineFilter.X2 = lineFilter.X1
+'    Fra_Approve.Left = lineFilter.X2 + Label7.Left
+'    txtYear.Width = lineFilter.X2 - txtYear.Left - 50
+'    txtClient_Brief_Id.Width = txtYear.Width
+'    txtExtention.Width = txtYear.Width
+'    txtStatus.Width = txtYear.Width
+'    'left part
+'    lbl_dateofPreviousIssue.Left = lineFilter.X1 + Label7.Left
+'    dtpDate_Previouse.Left = lbl_dateofPreviousIssue.Left + lbl_dateofPreviousIssue.Width + 50
+'    dtpDate_Issue.Left = dtpDate_Previouse.Left
+'    lbl_DateIssue.Left = lbl_dateofPreviousIssue.Left
+'    lblCountry.Left = lbl_dateofPreviousIssue.Left
+'    cboCountry.Left = dtpDate_Previouse.Left
+'    Fra_Approve.Left = dtpDate_Previouse.Left
+'    fra_DeliverableChannel.Width = pnl_Main.Width - fra_DeliverableChannel.Left - fraFilter.Left
+'    lstRec_Channel_Selection.Width = fra_DeliverableChannel.Width - (lstRec_Channel_Selection.Left * 2)
+'    lstRec_Channel_Selection.Height = fra_DeliverableChannel.Height - (lstRec_Channel_Selection.Top) - 200
+'    chk_All.Top = lstRec_Channel_Selection.Height + lstRec_Channel_Selection.Top + 50
+'    lbl_CheckAll.Top = chk_All.Top
 End Sub
 
 Private Sub picButton_Click(Index As Integer)
@@ -3488,6 +3509,7 @@ Private Sub picButton_Click(Index As Integer)
     'Lock_MainForm True
     Select Case Index
         Case enButtonType.bieAdd  '4 'ADD.
+
             Call db_add
         Case enButtonType.bieEdit  '5 'EDIT.
             Call db_edit

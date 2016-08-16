@@ -91,10 +91,10 @@ Begin VB.Form Frm_Login
       End
       Begin VB.TextBox txtUserName 
          Height          =   375
-         Left            =   2400
+         Left            =   2415
          TabIndex        =   6
-         Text            =   "admin"
-         Top             =   2910
+         Text            =   "wibisonog"
+         Top             =   2925
          Width           =   2475
       End
       Begin VB.TextBox txtPassword 
@@ -103,7 +103,7 @@ Begin VB.Form Frm_Login
          Left            =   2415
          PasswordChar    =   "*"
          TabIndex        =   5
-         Text            =   "123admin!@#"
+         Text            =   "@admin123"
          Top             =   3480
          Width           =   2475
       End

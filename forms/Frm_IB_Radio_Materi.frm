@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{0BA686C6-F7D3-101A-993E-0000C0EF6F5E}#1.0#0"; "THREED32.OCX"
+Object = "{0BA686C6-F7D3-101A-993E-0000C0EF6F5E}#1.0#0"; "THREED32.ocx"
 Object = "{562E3E04-2C31-4ECE-83F4-4017EEE51D40}#8.0#0"; "todg8.ocx"
 Begin VB.Form Frm_IB_Radio_Materi 
    BorderStyle     =   1  'Fixed Single
@@ -885,33 +885,7 @@ Sub AdjustSizeForm()
     Line2.X2 = mdi_Main.ScaleWidth
     fraIB.Width = Me.Width - (fraIB.Left * 2)
     fraPlanMonth.Width = Me.Width - (fraIB.Left * 2)
-'    pnl_Main.Height = Me.ScaleHeight - picToolbar.Height - picStatusBar.Height
-'    fra_Deliverable.Height = pnl_Main.Height - (fra_Deliverable.Top + 100)
-'    SSTab3.Height = fra_Deliverable.Height - (SSTab3.Top) - 150
-'    txtOther_Recomedation.Height = SSTab3.Height - (txtOther_Recomedation.Top) - 150
-'    txtAggreed_Channel_shortlist.Height = txtOther_Recomedation.Height
-'    fra_DeliverableChannel.Height = pnl_Main.Height - (fra_DeliverableChannel.Top + 100)
-'    fraFilter.Width = pnl_Main.Width - (fraFilter.Left * 2)
-'    lineFilter.X1 = fraFilter.Width / 2
-'    lineFilter.X2 = lineFilter.X1
-'    Fra_Approve.Left = lineFilter.X2 + Label7.Left
-'    txtYear.Width = lineFilter.X2 - txtYear.Left - 50
-'    txtClient_Brief_Id.Width = txtYear.Width
-'    txtExtention.Width = txtYear.Width
-'    txtStatus.Width = txtYear.Width
-'    'left part
-'    lbl_dateofPreviousIssue.Left = lineFilter.X1 + Label7.Left
-'    dtpDate_Previouse.Left = lbl_dateofPreviousIssue.Left + lbl_dateofPreviousIssue.Width + 50
-'    dtpDate_Issue.Left = dtpDate_Previouse.Left
-'    lbl_DateIssue.Left = lbl_dateofPreviousIssue.Left
-'    lblCountry.Left = lbl_dateofPreviousIssue.Left
-'    cboCountry.Left = dtpDate_Previouse.Left
-'    Fra_Approve.Left = dtpDate_Previouse.Left
-'    fra_DeliverableChannel.Width = pnl_Main.Width - fra_DeliverableChannel.Left - fraFilter.Left
-'    lstRec_Channel_Selection.Width = fra_DeliverableChannel.Width - (lstRec_Channel_Selection.Left * 2)
-'    lstRec_Channel_Selection.Height = fra_DeliverableChannel.Height - (lstRec_Channel_Selection.Top) - 200
-'    chk_All.Top = lstRec_Channel_Selection.Height + lstRec_Channel_Selection.Top + 50
-'    lbl_CheckAll.Top = chk_All.Top
+
 End Sub
 
 Private Sub picButton_Click(Index As Integer)
@@ -922,6 +896,7 @@ Private Sub picButton_Click(Index As Integer)
 ' Created By        : {73 64 6B}
 ' Date              : 12-Apr-2015/{73 64 6B} --> Semua coding dan query sudah di optimalkan agar faster, readable, safer, standardable.
 '************************************************
+    
     Dim strCode As String, strFileRpt As String
     'Lock_MainForm True
     Select Case Index

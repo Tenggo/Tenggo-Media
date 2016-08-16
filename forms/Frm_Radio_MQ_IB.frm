@@ -153,7 +153,7 @@ Private Sub Cmd_Ok_Click()
              TxtSQl = TxtSQl & Str_IB
              
              With rs
-                 .Open TxtSQl, Conn, adOpenKeyset, adLockReadOnly
+                 .Open TxtSQl, ConnERP, adOpenKeyset, adLockReadOnly
                  If Not .EOF Then
                  
                      Frm_Radio_Media_Quot.Flex_Quot.TextMatrix(11, Frm_Radio_Media_Quot.Flex_Quot.col) = Format(.Fields("Budget"), "##,##0")
@@ -168,7 +168,7 @@ Private Sub Cmd_Ok_Click()
             Dim Radio_Code As String
             
             TxtSQl = "select * from Media_Type where Media_Type_Name ='Radio Media Induk'"
-            RS_Code.Open TxtSQl, Conn, adOpenStatic, adLockReadOnly
+            RS_Code.Open TxtSQl, ConnERP, adOpenStatic, adLockReadOnly
             With RS_Code
                 If .EOF = False Then
                     Radio_Code = .Fields(0)
@@ -203,7 +203,7 @@ Private Sub Form_Load()
     TxtSQl = TxtSQl & " AND LEFT(IB_ID,4) ='" & Left(Trim(Frm_Radio_Media_Quot.Cbo_Brand.Text), 4) & "'"
     TxtSQl = TxtSQl & " AND IB_ID IN (SELECT IB_ID FROM Ib_Radio WHERE Approved_Flag=1 AND LEFT(IB_ID,4)='" & Left(Trim(Frm_Radio_Media_Quot.Cbo_Brand.Text), 4) & "' AND YEAR=" & Val(Frm_Radio_Media_Quot.Cbo_Year.Text) & " AND Status=1)"
     
-    rs.Open TxtSQl, Conn, adOpenKeyset, adLockReadOnly
+    rs.Open TxtSQl, ConnERP, adOpenKeyset, adLockReadOnly
 
     With rs
         Do While Not .EOF
